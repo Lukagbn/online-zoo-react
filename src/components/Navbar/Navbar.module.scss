@@ -39,9 +39,12 @@
     list-style: none;
     transition: 0.4s ease-in-out;
     pointer-events: none;
+    transform: translateY(-100%);
     &.navListActive {
       opacity: 1;
       pointer-events: all;
+      height: 754px;
+      transform: translateY(0%);
     }
     li a {
       color: #ffffff;
@@ -56,9 +59,11 @@
         color: #00a092;
       }
     }
+    .active a {
+      color: #00a092;
+    }
   }
 }
-
 .socialContainer {
   a {
     transition: 0.4s ease-in-out;
@@ -67,7 +72,6 @@
     }
   }
 }
-
 .burger {
   display: flex;
   flex-direction: column;
@@ -80,7 +84,6 @@
     background-color: #000000;
     transition: 0.4s ease-in-out;
   }
-
   &.burgerActive {
     position: fixed;
     right: 10px;
@@ -100,15 +103,12 @@
 }
 
 @media (min-width: 640px) {
-  .container {
-    max-width: 600px;
-  }
   .header .container {
     max-width: 100%;
-    padding-inline: 40px;
+    padding-inline: 20px;
   }
   .burger.burgerActive {
-    right: 40px;
+    right: 20px;
   }
   .nav .navList {
     max-width: 311px;
@@ -119,8 +119,7 @@
 
 @media (min-width: 1200px) {
   .header .container {
-    max-width: 1000px;
-    padding-inline: 0;
+    max-width: 1200px;
   }
   .nav {
     display: flex;
@@ -138,6 +137,7 @@
       max-width: unset;
       background: transparent;
       pointer-events: all;
+      transform: translateY(0%);
       li a {
         color: #000000;
         font-weight: 600;

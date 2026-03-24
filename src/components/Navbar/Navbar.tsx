@@ -3,14 +3,16 @@ import React, { useState } from "react";
 import styles from "./Navbar.module.scss";
 import layout from "@/app/layout.module.scss";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 function Navbar() {
+  const pathname = usePathname();
   const [active, setActive] = useState(false);
   const NAVBAR_LIST = [
-    { title: "about", url: "#" },
-    { title: "map", url: "#" },
+    { title: "about", url: "/" },
+    { title: "map", url: "/map" },
     { title: "zoos", url: "#" },
-    { title: "contact us", url: "#" },
+    { title: "contact us", url: "/contact" },
     {
       title: "design",
       url: "https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=0-1&t=Qtw6UTUpqk6Naxni-1",
@@ -44,7 +46,10 @@ function Navbar() {
             className={`${styles.navList} ${active ? styles.navListActive : ""}`}
           >
             {NAVBAR_LIST.map((item) => (
-              <li key={item.title}>
+              <li
+                key={item.title}
+                className={`${pathname === item.url ? styles.active : null}`}
+              >
                 <Link href={item.url}>{item.title}</Link>
               </li>
             ))}
