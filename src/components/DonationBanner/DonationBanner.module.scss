@@ -1,0 +1,167 @@
+.donations {
+  background-color: #20113d;
+  margin-bottom: 30px;
+}
+.donationsTextContent {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #ffffff;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  margin-inline: 10px;
+}
+.donationsTextContent h2 {
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 0%;
+  line-height: 31.7px;
+  text-transform: uppercase;
+}
+.donationsTextContent h3 {
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 0%;
+  line-height: 131%;
+  text-transform: uppercase;
+}
+.donationsTextContent p {
+  font-size: 18px;
+  letter-spacing: 0%;
+  line-height: 150%;
+  margin-block: 30px;
+}
+.donationsTextContent button {
+  margin-top: 10px;
+  outline: none;
+  border: 1px solid #ffffff;
+  height: 45px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0%;
+  line-height: 20px;
+  color: #ffffff;
+  background-color: transparent;
+  justify-content: right;
+  transition: 0.4s ease-in-out;
+  max-width: 300px;
+  width: 100%;
+  margin-inline: auto;
+}
+.donationsTextContent .btn-arrow {
+  background-color: #f58021;
+  width: 60px;
+  height: 100%;
+  justify-self: end;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s ease-in-out;
+}
+.donationsTextContent button:hover .btnArrow {
+  background-color: #d26004;
+}
+.arrowBtnBackground {
+  width: 60px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f58021;
+  transition: 0.4s ease-in-out;
+  border-radius: 5px;
+  &:hover {
+    background-color: #d26004;
+  }
+}
+@media (min-width: 640px) {
+  .donationContainer {
+    max-width: 600px;
+  }
+  .donationsTextContent {
+    padding-block: 50px;
+    align-items: center;
+  }
+  .donationsTextContent h2 {
+    font-size: 42px;
+    line-height: 51.2px;
+  }
+  .donationAction {
+    max-width: 363px;
+    width: 100%;
+  }
+  .donationsTextContent .donationAction button {
+    height: 74px;
+    font-size: 18px;
+    line-height: 21.9px;
+    max-width: 363px;
+    width: 100%;
+    gap: 39px;
+  }
+  .donationsTextContent .donationAction .btnArrow {
+    width: 74px;
+  }
+  .arrowBtnBackground {
+    width: 74px;
+  }
+}
+@media (min-width: 1240px) {
+  .donationContainer {
+    max-width: 1200px;
+  }
+  .donationsTextContent {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-inline: 0;
+  }
+  .donationsTextContent .donationInfo {
+    max-width: 576px;
+    width: 100%;
+  }
+  .donationsTextContent h2 {
+    text-align: left;
+  }
+  .donationsTextContent p {
+    text-align: left;
+    margin-bottom: 0;
+  }
+  .donationAction {
+    max-width: 320px;
+    width: 100%;
+    text-align: left;
+    align-self: baseline;
+  }
+  .donationsTextContent .donationAction button {
+    gap: 15px;
+  }
+  .donationsTextContent .donationAction .btnArrow {
+    width: 80px;
+  }
+  .arrowBtnBackground {
+    width: 80px;
+  }
+}
+@media (min-width: 1920px) {
+  .donationContainer {
+    max-width: 1400px;
+  }
+  .donationsTextContent .donationInfo {
+    max-width: 890px;
+  }
+  .donationsTextContent .donationInfo h2 {
+    font-size: 41px;
+  }
+  .donationsTextContent .donationInfo p {
+    max-width: 609px;
+    margin-bottom: 0;
+    margin-top: 20px;
+    line-height: 145%;
+  }
+}

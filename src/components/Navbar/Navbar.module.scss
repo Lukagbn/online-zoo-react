@@ -7,7 +7,6 @@
   align-items: center;
   background-color: #f58021;
   .container {
-    padding-inline: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -86,7 +85,7 @@
   }
   &.burgerActive {
     position: fixed;
-    right: 10px;
+    right: 20px;
     span {
       background: #ffffff;
       &:nth-of-type(2) {
@@ -105,7 +104,6 @@
 @media (min-width: 640px) {
   .header .container {
     max-width: 100%;
-    padding-inline: 20px;
   }
   .burger.burgerActive {
     right: 20px;
@@ -138,6 +136,12 @@
       background: transparent;
       pointer-events: all;
       transform: translateY(0%);
+      &.navListActive {
+        height: 100%;
+        transform: none;
+        position: static;
+        opacity: 1;
+      }
       li a {
         color: #000000;
         font-weight: 600;

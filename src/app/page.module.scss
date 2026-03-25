@@ -7,6 +7,7 @@
   background-repeat: no-repeat;
   height: 650px;
   h2 {
+    max-width: 890px;
     color: #00a092;
     text-transform: uppercase;
     font-weight: 800;
@@ -21,9 +22,13 @@
     letter-spacing: 0%;
     line-height: 150%;
   }
-}
-.heroContent {
-  margin-inline: 10px;
+  .heroImg {
+    display: block;
+    width: 100%;
+    height: 291px;
+    object-fit: cover;
+    object-position: right center;
+  }
 }
 .viewLive {
   background-color: #f58021;
@@ -44,6 +49,45 @@
   margin-top: 30px;
   transition: 0.4s ease-in-out;
   text-decoration: none;
+  &:hover {
+    background-color: #d26004;
+  }
+}
+
+.heroIntro {
+  margin-top: 50px;
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  .container {
+    max-width: 1000px;
+  }
+
+  .heroIntroTextContent {
+    margin-top: 30px;
+    margin-inline: 10px;
+    margin-bottom: 50px;
+    h2 {
+      font-size: 26px;
+      letter-spacing: 0%;
+      font-weight: 600;
+      line-height: 29px;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      color: #00a092;
+    }
+    p {
+      font-size: 18px;
+      letter-spacing: 0%;
+      font-weight: 400;
+      line-height: 148%;
+      color: #000000;
+    }
+    span {
+      display: none;
+    }
+  }
 }
 
 @media (min-width: 640px) {
@@ -52,7 +96,6 @@
     padding-top: 50px;
     background-position: right bottom;
     padding-bottom: 50px;
-
     &::before {
       content: "";
       position: absolute;
@@ -74,12 +117,14 @@
       max-width: 339px;
       line-height: 141%;
     }
+    .heroImg {
+      display: none;
+    }
   }
   .heroContent {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-inline: 20px;
   }
   .heroContainer {
     position: relative;
@@ -88,6 +133,36 @@
     text-align: left;
     height: 74px;
     max-width: 285px;
+  }
+  .heroIntro {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    .container {
+      padding-inline: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    .introWelcome {
+      max-width: 660px;
+      margin-right: auto;
+    }
+    .introHow {
+      max-width: 660px;
+      margin-left: auto;
+    }
+    .heroIntroTextContent {
+      margin-inline: 0;
+      h2 {
+        font-size: 54px;
+        line-height: 65.5px;
+      }
+    }
+    img {
+      max-width: 660px;
+      width: 100%;
+      display: block;
+      margin: auto;
+    }
   }
 }
 
@@ -98,12 +173,10 @@
     h2 {
       font-size: 82px;
       line-height: 93px;
-      max-width: 890px;
     }
   }
   .heroContent {
     margin-inline: 0;
-    padding-inline: 20px;
   }
   .heroContainer {
     max-width: 1200px;
@@ -112,6 +185,7 @@
     max-width: 240px;
   }
 }
+
 @media (min-width: 1920px) {
   .hero {
     background-size: 80% 100%;
