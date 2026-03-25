@@ -1,10 +1,12 @@
 import React from "react";
+import styles from "./RightArrow.module.scss";
 
 interface ArrowIconProps {
   color?: string;
+  onClick?: () => void;
 }
 
-function RightArrow({ color }: ArrowIconProps) {
+function RightArrow({ color, onClick }: ArrowIconProps) {
   return (
     <svg
       width="25"
@@ -12,6 +14,8 @@ function RightArrow({ color }: ArrowIconProps) {
       viewBox="0 0 25 22"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      onClick={onClick}
+      className={styles.transition}
     >
       <path
         fillRule="evenodd"

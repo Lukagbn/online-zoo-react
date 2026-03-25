@@ -1,0 +1,125 @@
+.petCard {
+  position: relative;
+  display: flex;
+  text-decoration: none;
+  flex-direction: column;
+  max-width: 300px;
+  width: 100%;
+  height: 600px;
+  background-color: #20113d;
+  color: #ffffff;
+  border-radius: 5px;
+  flex-shrink: 0;
+  transition: 0.4s ease-in-out;
+  &:hover {
+    scale: 0.98;
+  }
+  a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  .cardHeader {
+    position: relative;
+    max-height: 300px;
+    height: 100%;
+    img {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      display: block;
+      width: 100%;
+      object-fit: cover;
+      height: 300px;
+    }
+    p {
+      position: absolute;
+      padding-block: 12px;
+      padding-left: 30px;
+      padding-right: 22px;
+      background-color: #20113d;
+      font-size: 26px;
+      font-weight: 500;
+      letter-spacing: 0%;
+      line-height: 130%;
+      border-top-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      top: 0px;
+      left: 0px;
+    }
+  }
+  .cardBody {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-inline: 24px;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    h3 {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      font-size: 26px;
+      font-weight: 500;
+      letter-spacing: 0%;
+      line-height: 127%;
+      text-transform: capitalize;
+    }
+    p {
+      font-size: 18px;
+      letter-spacing: 0%;
+      line-height: 150%;
+    }
+    button {
+      text-decoration: none;
+      display: flex;
+      max-width: 240px;
+      width: 100%;
+      align-items: center;
+      color: #f58021;
+      background-color: transparent;
+      outline: none;
+      border: none;
+      font-weight: 600;
+      font-size: 20.27px;
+      letter-spacing: 0%;
+      line-height: 25px;
+      justify-self: center;
+      justify-content: center;
+      gap: 10px;
+      height: 73px;
+      transition: 0.4s ease-in-out;
+      border-radius: 5px;
+      position: relative;
+      z-index: 2;
+      svg path {
+        transition: 0.4s ease-in-out;
+      }
+      &:hover {
+        color: #ffffff;
+        background-color: #f58021;
+      }
+      &:hover svg path {
+        fill: #ffffff;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .petCard {
+    max-width: 445px;
+    height: 716px;
+    .cardHeader {
+      max-height: 440px;
+      img {
+        height: 440px;
+      }
+    }
+  }
+}
+@media (min-width: 1920px) {
+  .petCard {
+    height: 100%;
+  }
+}
