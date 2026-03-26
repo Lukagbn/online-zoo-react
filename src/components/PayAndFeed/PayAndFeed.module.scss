@@ -1,0 +1,167 @@
+.feed {
+  background-color: #20113d;
+  color: #ffffff;
+  h2 {
+    padding-top: 20px;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 31.7px;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+  .feedCard {
+    .animal {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+    .logo {
+      display: block;
+      max-width: 106px;
+      width: 100%;
+      height: 80px;
+    }
+    .feedCardBody {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+      text-align: center;
+      margin-inline: 10px;
+    }
+    &:nth-of-type(1) .feedCardBody {
+      margin-inline: 20px;
+    }
+    h3 {
+      font-size: 26px;
+      line-height: 126%;
+      font-weight: 500;
+      letter-spacing: 0%;
+    }
+    p {
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0%;
+    }
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: #f58021;
+      height: 45px;
+      max-width: 260px;
+      border-radius: 5px;
+      width: 100%;
+      border: none;
+      outline: none;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 21.9px;
+      letter-spacing: 0%;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 90px;
+      transition: 0.4s ease-in-out;
+      &:hover {
+        background-color: #d26004;
+      }
+    }
+  }
+  .donation {
+    width: 100px;
+    .food {
+      width: 80px;
+    }
+  }
+}
+@media (min-width: 640px) {
+  .feed {
+    h2 {
+      padding-top: 80px;
+      font-size: 54px;
+      font-weight: 600;
+      line-height: 65.8px;
+      text-align: center;
+    }
+    p {
+      padding-inline: 0;
+    }
+    .feedCard {
+      max-width: 640px;
+      margin: auto;
+      .feedCardBody {
+        margin-top: 50px;
+        margin-inline: 20px;
+      }
+      button {
+        max-width: 290px;
+        height: 74px;
+        margin-bottom: 160px;
+        margin-top: 30px;
+      }
+    }
+  }
+}
+@media (min-width: 1240px) {
+  .feed {
+    .feedContainer {
+      max-width: 1200px;
+      margin: auto;
+      h2 {
+        padding-top: 150px;
+        padding-left: 60px;
+        text-align: left;
+      }
+      .feedCard {
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        align-items: center;
+        .animal {
+          max-width: 550px;
+          margin: unset;
+          height: 358px;
+        }
+        .feedCardBody {
+          margin-inline: 0;
+          margin-top: unset;
+          button {
+            margin-bottom: 0;
+            margin-top: 100px;
+            margin-bottom: 200px;
+            margin-right: auto;
+          }
+        }
+      }
+      .feedCardLast {
+        align-items: start;
+      }
+    }
+  }
+}
+@media (min-width: 1920px) {
+  .feed {
+    .feedContainer {
+      h2 {
+        padding-left: 0px;
+      }
+      max-width: 1400px;
+      .feedCard {
+        justify-content: space-between;
+        .feedCardBody {
+          margin-right: 120px;
+          max-width: 560px;
+          align-items: baseline;
+          text-align: left;
+          .food {
+            max-width: 80px;
+          }
+        }
+      }
+    }
+  }
+}

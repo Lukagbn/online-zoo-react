@@ -8,6 +8,7 @@ import DonationBanner from "@/components/DonationBanner/DonationBanner";
 import PetCard from "@/components/PetCard/PetCard";
 import { useEffect, useRef, useState } from "react";
 import LeftArrow from "@/components/LeftArrow/LeftArrow";
+import PayAndFeed from "@/components/PayAndFeed/PayAndFeed";
 
 interface PetsApiResponse {
   data: PetsProps[];
@@ -31,9 +32,12 @@ export default function Home() {
         "https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/pets",
       );
       const result: PetsApiResponse = await res.json();
+      if (!res.ok) {
+        console.log("Something went wrong. Please, refresh the page");
+      }
       setPets(result.data);
     } catch (err) {
-      console.log("err", err);
+      console.log("error:", err);
     }
   }
   const scrollRight = () => {
@@ -171,6 +175,7 @@ export default function Home() {
           </button>
         </div>
       </section>
+      <PayAndFeed />
     </>
   );
 }

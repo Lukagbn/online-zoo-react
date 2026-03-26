@@ -1,0 +1,32 @@
+.hr {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding-left: 10px;
+  gap: 10px;
+  padding-top: 44px;
+  padding-bottom: 30px;
+  h3 {
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: 0%;
+  }
+  hr {
+    width: 100%;
+  }
+}
+@media (min-width: 640px) {
+  .hr {
+    padding-block: 50px;
+    padding-inline: 20px;
+  }
+}
+@media (min-width: 1240px) {
+  .hr {
+    padding-top: 84px;
+    padding-bottom: 64px;
+    gap: 63px;
+    padding-inline: 0;
+  }
+}
