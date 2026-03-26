@@ -1,0 +1,143 @@
+.careCard {
+  border-radius: 5px;
+  background-color: #20113d;
+  color: #ffffff;
+  flex-shrink: 0;
+  max-width: 300px;
+  width: 100%;
+  max-height: 570px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: 0.4s ease-in-out;
+  &:hover {
+    scale: 0.98;
+  }
+  a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  .cardHeader {
+    flex-shrink: 0;
+    img {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      display: block;
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+  }
+  .cardBody {
+    padding-top: 15px;
+    padding-inline: 27px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 218px;
+    p {
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0%;
+    }
+    button {
+      position: relative;
+      z-index: 2;
+      max-width: 142px;
+      width: 100%;
+      height: 74px;
+      color: #f58021;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 21.9px;
+      letter-spacing: 0%;
+      gap: 10px;
+      justify-content: center;
+      margin-inline: auto;
+      margin-top: auto;
+      transition: 0.4s ease-in-out;
+      &:hover {
+        background-color: #f58021;
+        color: #ffffff;
+        svg path {
+          fill: white;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 640px) {
+  .careCard {
+    max-width: 600px;
+    width: 100%;
+    height: 297px;
+    align-items: center;
+    flex-direction: row;
+    .cardHeader {
+      max-width: 250px;
+      width: 100%;
+      height: 100%;
+      img {
+        height: 100%;
+        border-bottom-left-radius: 5px;
+        border-top-right-radius: 0px;
+      }
+    }
+    .cardBody {
+      justify-content: center;
+      p {
+        margin-bottom: 20px;
+      }
+      button {
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .careCard {
+    max-width: 455px;
+    min-height: 639px;
+    flex-direction: column;
+    .cardHeader {
+      max-width: 100%;
+      height: 373px;
+      img {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-left-radius: 0px;
+      }
+    }
+    .cardBody {
+      padding-top: 30px;
+      padding-left: 25px;
+      padding-right: 40px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      p {
+        margin-bottom: 42px;
+      }
+      button {
+        margin-top: auto;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+@media (min-width: 1920px) {
+  .careCard {
+    max-width: 440px;
+    min-height: 658px;
+    height: 100%;
+  }
+}

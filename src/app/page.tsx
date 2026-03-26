@@ -10,6 +10,7 @@ import { useEffect, useRef, useState } from "react";
 import LeftArrow from "@/components/LeftArrow/LeftArrow";
 import PayAndFeed from "@/components/PayAndFeed/PayAndFeed";
 import Testimonials from "@/components/Testimonials/Testimonials";
+import Care from "@/components/Care/Care";
 
 interface PetsApiResponse {
   data: PetsProps[];
@@ -178,6 +179,7 @@ export default function Home() {
       </section>
       <PayAndFeed />
       <Testimonials />
+      <Care />
     </>
   );
 }
