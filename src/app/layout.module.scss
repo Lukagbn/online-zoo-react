@@ -4,10 +4,11 @@
   transition: 0.4s ease-in-out;
   padding-inline: 20px;
 }
-@media (min-width: 1240px) {
+@media (min-width: 1200px) {
   .container {
-    max-width: 1200px;
+    max-width: 1120px;
     padding-inline: 0;
+    margin-inline: auto;
   }
 }
 @media (min-width: 1920px) {

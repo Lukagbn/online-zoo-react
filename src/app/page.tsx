@@ -9,6 +9,7 @@ import PetCard from "@/components/PetCard/PetCard";
 import { useEffect, useRef, useState } from "react";
 import LeftArrow from "@/components/LeftArrow/LeftArrow";
 import PayAndFeed from "@/components/PayAndFeed/PayAndFeed";
+import Testimonials from "@/components/Testimonials/Testimonials";
 
 interface PetsApiResponse {
   data: PetsProps[];
@@ -176,6 +177,7 @@ export default function Home() {
         </div>
       </section>
       <PayAndFeed />
+      <Testimonials />
     </>
   );
 }
