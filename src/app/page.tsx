@@ -11,6 +11,7 @@ import LeftArrow from "@/components/LeftArrow/LeftArrow";
 import PayAndFeed from "@/components/PayAndFeed/PayAndFeed";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import Care from "@/components/Care/Care";
+import TouchAnimal from "@/components/TouchAnimal/TouchAnimal";
 
 interface PetsApiResponse {
   data: PetsProps[];
@@ -180,6 +181,7 @@ export default function Home() {
       <PayAndFeed />
       <Testimonials />
       <Care />
+      <TouchAnimal />
     </>
   );
 }

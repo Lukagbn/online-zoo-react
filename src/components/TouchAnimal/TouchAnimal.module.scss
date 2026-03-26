@@ -1,0 +1,33 @@
+.touchAnimal {
+  img {
+    width: 100%;
+    display: block;
+    height: 190px;
+    margin-bottom: 70px;
+  }
+}
+@media (min-width: 640px) {
+  .touchAnimal {
+    img {
+      height: 380px;
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .touchAnimal {
+    img {
+      height: 668px;
+      margin-bottom: 150px;
+    }
+  }
+}
+@media (min-width: 1920px) {
+  .touchAnimal {
+    img {
+      height: 652px;
+      max-width: 1400px;
+      width: 100%;
+      margin-inline: auto;
+    }
+  }
+}
