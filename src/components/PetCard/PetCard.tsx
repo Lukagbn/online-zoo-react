@@ -4,15 +4,16 @@ import Link from "next/link";
 import RightArrow from "../ArrowButtons/RightArrow/RightArrow";
 
 interface PetCardProps {
+  id: number;
   name: string;
   commonName: string;
   description: string;
 }
 
-function PetCard({ name, commonName, description }: PetCardProps) {
+function PetCard({ id, name, commonName, description }: PetCardProps) {
   return (
     <div className={styles.petCard}>
-      <Link href="#"></Link>
+      <Link href={`/zoos/${id}`}></Link>
       <div className={styles.cardHeader}>
         <img src="/images/eagles.png" />
         <p>{name}</p>

@@ -6,10 +6,10 @@ import RightArrow from "../ArrowButtons/RightArrow/RightArrow";
 
 function Footer() {
   const FOOTER_LIST = [
-    { title: "about", href: "#" },
-    { title: "map", href: "#" },
-    { title: "zoos", href: "#" },
-    { title: "contact us", href: "#" },
+    { title: "about", href: "/" },
+    { title: "map", href: "/map" },
+    { title: "zoos", href: "/zoos/1" },
+    { title: "contact us", href: "/contact" },
   ];
   const FOOTER_BRANDS = [
     { href: "#", img: "/icons/logo.svg", alt: "online zoo" },

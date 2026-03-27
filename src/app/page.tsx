@@ -39,6 +39,7 @@ export default function Home() {
         console.log("Something went wrong. Please, refresh the page");
       }
       setPets(result.data);
+      console.log(result.data);
     } catch (err) {
       console.log("error:", err);
     }
@@ -160,6 +161,7 @@ export default function Home() {
           {pets?.map((pet) => (
             <PetCard
               key={pet.id}
+              id={pet.id}
               name={pet.name}
               commonName={pet.commonName}
               description={pet.description}

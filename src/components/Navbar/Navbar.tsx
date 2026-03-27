@@ -11,7 +11,7 @@ function Navbar() {
   const NAVBAR_LIST = [
     { title: "about", url: "/" },
     { title: "map", url: "/map" },
-    { title: "zoos", url: "#" },
+    { title: "zoos", url: "/zoos/1" },
     { title: "contact us", url: "/contact" },
     {
       title: "design",
