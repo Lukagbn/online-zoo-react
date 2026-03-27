@@ -1,0 +1,19 @@
+.loader {
+  position: absolute;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 5px solid #d26004;
+  border-top-color: #ffffff;
+  animation: 1s spin linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}

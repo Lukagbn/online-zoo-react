@@ -1,0 +1,23 @@
+.didYouKnow {
+  margin-block: 50px;
+  margin-inline: 10px;
+  box-shadow: 0px 4px 50px 0px #0000007c;
+  border-radius: 5px;
+  text-align: center;
+  padding-inline: 10px;
+  padding-bottom: 50px;
+  h2 {
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: 0%;
+    line-height: 31.7px;
+    text-transform: uppercase;
+    color: #00a092;
+    padding-block: 30px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+}

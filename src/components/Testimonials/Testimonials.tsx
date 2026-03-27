@@ -6,6 +6,8 @@ import layout from "@/app/layout.module.scss";
 import TestimonialsCard, {
   TestimonialsProps,
 } from "./TestimonialsCard/TestimonialsCard";
+import FetchError from "../FetchError/FetchError";
+import Loader from "../Loader/Loader";
 
 interface TestimonialsApiResponse {
   data: TestimonialsProps[];
@@ -56,7 +58,6 @@ function Testimonials() {
     } catch (err) {
       setError(true);
       setloading(false);
-      console.log("error:", err);
     }
   }
   useEffect(() => {
@@ -82,16 +83,14 @@ function Testimonials() {
           </p>
         </div>
         {error ? (
-          <div className={styles.errorMessage}>
-            Something went wrong. Please, refresh the page!
-          </div>
+          <FetchError />
         ) : (
           <div
             className={`${styles.testimonialsCardsWrapper} ${!loading ? "" : styles.loadingCards}`}
             ref={containerRef}
           >
             {testimonialData === null ? (
-              <div className={styles.loader}></div>
+              <Loader />
             ) : (
               testimonialData.map((item, index) => (
                 <TestimonialsCard
