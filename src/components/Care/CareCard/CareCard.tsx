@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import RightArrow from "../RightArrow/RightArrow";
+import RightArrow from "@/components/ArrowButtons/RightArrow/RightArrow";
 import styles from "./CareCard.module.scss";
 import Link from "next/link";
 

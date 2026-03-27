@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./DonationBanner.module.scss";
 import layout from "@/app/layout.module.scss";
-import RightArrow from "../RightArrow/RightArrow";
+import RightArrow from "../ArrowButtons/RightArrow/RightArrow";
 
 interface DonationProps {
   title: string;

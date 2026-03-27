@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
-import LeftArrow from "../LeftArrow/LeftArrow";
-import RightArrow from "../RightArrow/RightArrow";
+import LeftArrow from "../ArrowButtons/LeftArrow/LeftArrow";
+import RightArrow from "../ArrowButtons/RightArrow/RightArrow";
 import styles from "./Testimonials.module.scss";
 import layout from "@/app/layout.module.scss";
 import TestimonialsCard, {
   TestimonialsProps,
-} from "../TestimonialsCard/TestimonialsCard";
+} from "./TestimonialsCard/TestimonialsCard";
 
 interface TestimonialsApiResponse {
   data: TestimonialsProps[];
@@ -53,7 +53,6 @@ function Testimonials() {
         return;
       }
       setTestimonialData(result.data);
-      console.log(result.data);
     } catch (err) {
       setError(true);
       setloading(false);

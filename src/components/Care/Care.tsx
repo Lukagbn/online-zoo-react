@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import RightArrow from "../RightArrow/RightArrow";
-import CareCard from "../CareCard/CareCard";
+import RightArrow from "../ArrowButtons/RightArrow/RightArrow";
+import CareCard from "./CareCard/CareCard";
 import styles from "./Care.module.scss";
 import layout from "@/app/layout.module.scss";
-import { CareCardProps } from "../CareCard/CareCard";
+import { CareCardProps } from "./CareCard/CareCard";
 
 function Care() {
   const CARE_CARDS: CareCardProps[] = [

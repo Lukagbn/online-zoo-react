@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./PetCard.module.scss";
 import Link from "next/link";
-import RightArrow from "../RightArrow/RightArrow";
+import RightArrow from "../ArrowButtons/RightArrow/RightArrow";
 
 interface PetCardProps {
   name: string;

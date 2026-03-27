@@ -1,0 +1,13 @@
+.lion {
+  bottom: 28%;
+  left: 41%;
+  path:first-child {
+    fill: #f58021;
+    transition: fill 0.3s ease;
+  }
+}
+.active {
+  path:first-child {
+    fill: #ffffff !important;
+  }
+}

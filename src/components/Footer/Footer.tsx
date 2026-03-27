@@ -2,8 +2,7 @@ import React from "react";
 import styles from "./Footer.module.scss";
 import layout from "@/app/layout.module.scss";
 import Link from "next/link";
-import LeftArrow from "../RightArrow/RightArrow";
-import RightArrow from "../RightArrow/RightArrow";
+import RightArrow from "../ArrowButtons/RightArrow/RightArrow";
 
 function Footer() {
   const FOOTER_LIST = [

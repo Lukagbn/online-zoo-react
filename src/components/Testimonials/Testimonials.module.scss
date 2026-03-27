@@ -95,7 +95,6 @@
   border: 5px solid #d26004;
   border-top-color: #ffffff;
   animation: 1s spin linear infinite;
-  // margin: auto;
 }
 .errorMessage {
   height: 500px;
@@ -113,6 +112,7 @@
 .loadingCards {
   position: relative;
   min-height: 50px;
+  overflow: hidden;
 }
 @keyframes spin {
   from {
