@@ -1,0 +1,163 @@
+.getInTouch {
+  img {
+    display: block;
+    max-width: 1400px;
+    width: 100%;
+    max-height: 815px;
+    margin-inline: auto;
+  }
+  .contentWrapper {
+    margin-inline: 10px;
+    margin-bottom: 80px;
+    .text-wrapper {
+      text-align: center;
+    }
+    .textWrapper {
+      text-align: center;
+      h2 {
+        font-size: 26px;
+        line-height: 31.7px;
+        letter-spacing: 0%;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: #00a092;
+        margin-block: 30px;
+      }
+      p {
+        font-size: 20px;
+        line-height: 150%;
+        letter-spacing: 0%;
+      }
+    }
+    .form {
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      .formGroup {
+        display: block;
+        label {
+          font-size: 18px;
+          text-transform: capitalize;
+        }
+        &::before {
+          content: "* ";
+          color: #00a092;
+        }
+        input,
+        textarea {
+          border-radius: 5px;
+          outline: none;
+          border: 1px solid black;
+          background-color: transparent;
+          color: #000000;
+          padding: 10px;
+          width: 100%;
+          font-size: 18px;
+          margin-top: 5px;
+        }
+        input {
+          height: 50px;
+        }
+        textarea {
+          min-height: 200px;
+        }
+      }
+      button {
+        background-color: #00a092;
+        border: 5px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        height: 50px;
+        color: #ffff;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: center;
+        margin-inline: auto;
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: uppercase;
+        transition: 0.4s ease-in-out;
+        padding: 20px;
+        &:hover {
+          background-color: #05786e;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 640px) {
+  .getInTouch {
+    .contentWrapper {
+      margin-inline: 20px;
+      .textWrapper {
+        h2 {
+          font-size: 54px;
+          line-height: 65.8px;
+          font-weight: 600;
+        }
+      }
+      .form {
+        .formGroup {
+          input {
+            height: 60px;
+          }
+          textarea {
+            padding: 20px;
+          }
+        }
+        button {
+          max-width: 290px;
+          width: 100%;
+          height: 74px;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .getInTouch {
+    .contentWrapper {
+      max-width: 835px;
+      margin-inline: auto;
+      h2 {
+        margin-top: 50px;
+      }
+      .form {
+        width: 100%;
+        padding-right: 88px;
+        button {
+          margin-left: 0;
+          max-width: 360px;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1920px) {
+  .getInTouch {
+    .contentWrapper {
+      max-width: 1400px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 150px;
+      margin-top: 150px;
+      .textWrapper {
+        max-width: 545px;
+        text-align: start;
+        h2 {
+          margin-top: 0;
+          margin-bottom: 50px;
+        }
+      }
+      .form {
+        margin-top: 0;
+        max-width: 680px;
+        padding-right: 0;
+      }
+    }
+  }
+}
