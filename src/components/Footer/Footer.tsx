@@ -1,8 +1,8 @@
-import React from "react";
 import styles from "./Footer.module.scss";
 import layout from "@/app/layout.module.scss";
 import Link from "next/link";
 import RightArrow from "../ArrowButtons/RightArrow/RightArrow";
+import Donation from "../Donation/Donation";
 
 function Footer() {
   const FOOTER_LIST = [
@@ -57,10 +57,7 @@ function Footer() {
               ))}
             </ul>
           </nav>
-          <button type="button" className={styles.donateVolunteers}>
-            Donate for volunteers
-            <RightArrow color="white" />
-          </button>
+          <Donation />
         </div>
         <hr className={styles.topLine} />
         <div className={styles.footerBody}>

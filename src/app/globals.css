@@ -47,6 +47,10 @@ a {
 button {
   cursor: pointer;
 }
+html.noScroll,
+body.noScroll {
+  overflow: hidden;
+}
 
 @media (prefers-color-scheme: dark) {
   html {
