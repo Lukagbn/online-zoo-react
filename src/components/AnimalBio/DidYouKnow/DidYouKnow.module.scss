@@ -21,3 +21,33 @@
     letter-spacing: 0%;
   }
 }
+@media (min-width: 640px) {
+  .didYouKnow {
+    margin-inline: 20px;
+    padding-inline: 30px;
+    p {
+      font-size: 26px;
+    }
+    h2 {
+      font-size: 42px;
+      font-weight: 500;
+      line-height: 51.2px;
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .didYouKnow {
+    margin-top: 100px;
+    margin-bottom: 130px;
+    max-width: 930px;
+    margin-inline: auto;
+    padding-bottom: 30px;
+    padding-inline: 95px;
+  }
+}
+@media (min-width: 1200px) {
+  .didYouKnow {
+    margin-top: 150px;
+    max-width: 1040px;
+  }
+}

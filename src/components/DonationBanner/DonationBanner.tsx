@@ -6,11 +6,12 @@ import RightArrow from "../ArrowButtons/RightArrow/RightArrow";
 interface DonationProps {
   title: string;
   paragraph: string;
+  className?: string;
 }
 
-function DonationBanner({ title, paragraph }: DonationProps) {
+function DonationBanner({ title, paragraph, className }: DonationProps) {
   return (
-    <section className={styles.donations}>
+    <section className={`${styles.donations} ${className || ""}`}>
       <div className={`${styles.donationContainer} ${layout.container}`}>
         <div className={styles.donationsTextContent}>
           <div className={styles.donationInfo}>

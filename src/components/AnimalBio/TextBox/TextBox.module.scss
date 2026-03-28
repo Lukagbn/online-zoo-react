@@ -42,3 +42,87 @@
     }
   }
 }
+.img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  max-height: 600px;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animalMap {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  border: none;
+  overflow: hidden;
+  background: transparent;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  span {
+    color: #f58021;
+    cursor: pointer;
+    position: absolute;
+    font-weight: 600;
+    font-size: 30px;
+    right: 10px;
+    top: 10px;
+    z-index: 101;
+  }
+}
+@media (min-width: 640px) {
+  .animalBioText {
+    margin-inline: 20px;
+  }
+  .textBox {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .animalBio .img {
+    padding-inline: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  .animalBioText {
+    margin: 0;
+    max-width: 500px;
+    width: 100%;
+  }
+  .animalBio {
+    max-width: 1120px;
+    margin: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    .img {
+      max-width: 445px;
+      height: 455px;
+      padding-inline: 0;
+    }
+    .viewMap {
+      max-width: 240px;
+    }
+  }
+}
+@media (min-width: 1920px) {
+  .animalBio {
+    max-width: 1400px;
+    p {
+      flex-shrink: 0;
+    }
+  }
+}

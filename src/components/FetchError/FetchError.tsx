@@ -1,9 +1,13 @@
 import React from "react";
 import styles from "./FetchError.module.scss";
 
-function FetchError() {
+interface FetchClassProp {
+  className?: string;
+}
+
+function FetchError({ className }: FetchClassProp) {
   return (
-    <div className={styles.errorMessage}>
+    <div className={`${styles.errorMessage} ${className || ""}`}>
       Something went wrong. Please, refresh the page!
     </div>
   );

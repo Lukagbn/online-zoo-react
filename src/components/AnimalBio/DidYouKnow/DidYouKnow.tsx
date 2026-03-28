@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styles from "./DidYouKnow.module.scss";
-import FetchError from "@/components/FetchError/FetchError";
 import Loader from "@/components/Loader/Loader";
 
 interface PetDescApiData {
@@ -10,29 +9,27 @@ interface PetDescProps {
   description: string;
 }
 
-function DidYouKnow({ id }: { id: string }) {
+function DidYouKnow({ id, onError }: { id: string; onError: () => void }) {
   const [title, setTitle] = useState<PetDescProps | null>(null);
-  const [error, setError] = useState(false);
   async function fetchDidYouKnow() {
     try {
       const res = await fetch(
         `https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/pets/${id}`,
       );
       if (!res.ok) {
-        setError(true);
+        onError();
         return;
       }
       const result: PetDescApiData = await res.json();
       setTitle(result.data);
     } catch (err) {
-      setError(true);
+      onError();
       console.log("err:", err);
     }
   }
   useEffect(() => {
     fetchDidYouKnow();
   }, []);
-  if (error) return <FetchError />;
   if (!title) return <Loader />;
   return (
     <section className={styles.didYouKnow}>

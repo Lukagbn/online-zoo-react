@@ -10,29 +10,33 @@ interface PetDescProps {
   detailedDescription: string;
 }
 
-function AnimalBioDescription({ id }: { id: string }) {
+function AnimalBioDescription({
+  id,
+  onError,
+}: {
+  id: string;
+  onError: () => void;
+}) {
   const [desc, setDesc] = useState<PetDescProps | null>(null);
-  const [error, setError] = useState(false);
   async function fetchDesc() {
     try {
       const res = await fetch(
         `https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/pets/${id}`,
       );
       if (!res.ok) {
-        setError(true);
+        onError();
         return;
       }
       const result: PetDescApiData = await res.json();
       setDesc(result.data);
     } catch (err) {
-      setError(true);
+      onError();
       console.log("err:", err);
     }
   }
   useEffect(() => {
     fetchDesc();
   }, [id]);
-  if (error) return <FetchError />;
   if (!desc) return <Loader />;
   return (
     <div className={styles.animalBioIntro}>

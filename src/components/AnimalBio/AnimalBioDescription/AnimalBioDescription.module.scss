@@ -8,3 +8,22 @@
     letter-spacing: 0%;
   }
 }
+@media (min-width: 640px) {
+  .animalBioIntro {
+    font-size: 18px;
+    margin-inline: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  .animalBioIntro {
+    max-width: 1120px;
+    margin-top: 50px;
+    margin-inline: auto;
+  }
+}
+@media (min-width: 1920px) {
+  .animalBioIntro {
+    max-width: 1400px;
+    margin-bottom: 150px;
+  }
+}

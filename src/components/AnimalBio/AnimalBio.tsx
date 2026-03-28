@@ -23,7 +23,7 @@ interface PetProps {
   type: string;
 }
 
-function AnimalBio({ id }: { id: string }) {
+function AnimalBio({ id, onError }: { id: string; onError: () => void }) {
   const [petData, setPetData] = useState<PetProps | null>(null);
   const [error, setError] = useState(false);
   async function fetchPet() {
@@ -32,20 +32,19 @@ function AnimalBio({ id }: { id: string }) {
         `https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/pets/${id}`,
       );
       if (!res.ok) {
-        setError(true);
+        onError();
         return;
       }
       const result: PetApiData = await res.json();
       setPetData(result.data);
     } catch (err) {
-      setError(true);
+      onError();
       console.log("err:", err);
     }
   }
   useEffect(() => {
     fetchPet();
   }, [id]);
-  if (error) return <FetchError />;
   if (!petData) return <Loader />;
 
   return (
