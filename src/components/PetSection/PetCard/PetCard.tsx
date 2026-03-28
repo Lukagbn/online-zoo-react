@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./PetCard.module.scss";
 import Link from "next/link";
-import RightArrow from "../ArrowButtons/RightArrow/RightArrow";
-import { ANIMAL_BIO_IMAGES } from "../AnimalBio/TextBox/TextBox";
+import RightArrow from "../../ArrowButtons/RightArrow/RightArrow";
+import { ANIMAL_BIO_IMAGES } from "../../AnimalBio/TextBox/TextBox";
 
 interface PetCardProps {
   id: number;

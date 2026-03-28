@@ -112,7 +112,13 @@ function Testimonials() {
         <div className={styles.dot}></div>
         <div className={styles.dot}></div>
       </div>
-      <div className={`${styles.testimonialBtnContainer} ${layout.container}`}>
+      <div
+        className={
+          error
+            ? `${styles.testimonialsError}`
+            : `${styles.testimonialBtnContainer} ${layout.container}`
+        }
+      >
         <div className={styles.btnContainer}>
           <button
             type="button"
