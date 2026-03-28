@@ -1,0 +1,115 @@
+.aside {
+  max-width: 50px;
+  width: 100%;
+  position: fixed;
+  top: 20px;
+  height: fit-content;
+  align-self: flex-start;
+
+  z-index: 10;
+  background-color: #20113d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.4s ease-in-out;
+  top: 0;
+  max-height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  top: 110px;
+}
+.aside img {
+  cursor: pointer;
+}
+.aside span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 91px;
+  gap: 10px;
+  height: 30px;
+  background-color: #f58021;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: 0.4s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-bottom-right-radius: 5px;
+}
+.aside p {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s ease-in-out;
+}
+.asideBox {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  border-bottom: 1px solid #ffff;
+  width: 100%;
+  justify-content: center;
+  transition: 0.4s ease-in-out;
+  flex-shrink: 0;
+}
+.aside .asideBox img {
+  width: 100%;
+  display: block;
+}
+.asideBox .arrowIcon {
+  max-width: 16px;
+  height: 15px;
+  transition: 0.4s ease-in-out;
+}
+.asideBox .panda {
+  max-width: 26px;
+  height: 20px;
+}
+.asideBox .arrowDown {
+  width: 9px;
+  height: 15px;
+}
+.asideBox .pandaLg {
+  display: none;
+}
+.asideActive {
+  max-width: 230px;
+  transition: 0.4s ease-in-out;
+}
+.asideActive .asideBox {
+  gap: 20px;
+}
+.asideActive p {
+  max-width: 160px;
+  font-size: 14px;
+  width: initial;
+  height: initial;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: #ffff;
+  opacity: 1;
+}
+.asideActive .arrowIcon {
+  transform: rotate(180deg);
+}
+.asideActive .asideBox:nth-of-type(1) {
+  justify-content: flex-end;
+  padding-right: 21px;
+  position: relative;
+}
+.asideActive span {
+  opacity: 1;
+  transform: translateX(0);
+}
+.aside .asideBox span img {
+  width: 20px;
+  height: 20px;
+}
+.aside .asideBox:nth-of-type(6) {
+  border-bottom: 0;
+}

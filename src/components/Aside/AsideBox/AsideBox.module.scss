@@ -1,0 +1,28 @@
+.asideBox {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  border-bottom: 1px solid #ffff;
+  width: 100%;
+  justify-content: center;
+  transition: 0.4s ease-in-out;
+  flex-shrink: 0;
+  .panda {
+    max-width: 26px;
+    height: 20px;
+  }
+  .pandaLg {
+    display: none;
+  }
+  img {
+    width: 100%;
+    display: block;
+  }
+  .panda {
+    max-width: 26px;
+    height: 20px;
+  }
+  .asideBox {
+    gap: 20px;
+  }
+}
