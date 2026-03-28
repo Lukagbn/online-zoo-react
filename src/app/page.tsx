@@ -12,6 +12,7 @@ import PayAndFeed from "@/components/PayAndFeed/PayAndFeed";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import Care from "@/components/Care/Care";
 import TouchAnimal from "@/components/TouchAnimal/TouchAnimal";
+import { ANIMAL_BIO_IMAGES } from "@/components/AnimalBio/TextBox/TextBox";
 
 interface PetsApiResponse {
   data: PetsProps[];
