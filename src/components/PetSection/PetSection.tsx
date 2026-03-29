@@ -119,7 +119,7 @@ function PetSection() {
           onMouseEnter={() => setHoverFav(true)}
           onMouseLeave={() => setHoverFav(false)}
         >
-          choose your favourite
+          Feed your favourite
           <RightArrow color={hoverFav ? "white" : "#20113d"} />
         </button>
       </div>

@@ -64,7 +64,7 @@ function Care() {
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
         >
-          Choose Your Favourite
+          Feed Your Favourite
           <RightArrow color={hover ? "white" : "#20113d"} />
         </button>
       </div>

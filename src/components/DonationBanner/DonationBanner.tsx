@@ -1,7 +1,9 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import styles from "./DonationBanner.module.scss";
 import layout from "@/app/layout.module.scss";
 import RightArrow from "../ArrowButtons/RightArrow/RightArrow";
+import MakeYourDonation from "../Donation/MakeYourDonation/MakeYourDonation";
 
 interface DonationProps {
   title: string;
@@ -10,6 +12,7 @@ interface DonationProps {
 }
 
 function DonationBanner({ title, paragraph, className }: DonationProps) {
+  const [pressed, setPressed] = useState(false);
   return (
     <section className={`${styles.donations} ${className || ""}`}>
       <div className={`${styles.donationContainer} ${layout.container}`}>
@@ -20,7 +23,7 @@ function DonationBanner({ title, paragraph, className }: DonationProps) {
           </div>
           <div className={styles.donationAction}>
             <h3>Quick Donate</h3>
-            <button type="button">
+            <button type="button" onClick={() => setPressed(!pressed)}>
               $ donation amount
               <div className={styles.arrowBtnBackground}>
                 <RightArrow color="white" />
@@ -29,6 +32,7 @@ function DonationBanner({ title, paragraph, className }: DonationProps) {
           </div>
         </div>
       </div>
+      <MakeYourDonation open={pressed} onClose={() => setPressed(false)} />
     </section>
   );
 }
