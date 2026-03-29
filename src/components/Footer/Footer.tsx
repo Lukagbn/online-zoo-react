@@ -4,6 +4,7 @@ import Link from "next/link";
 import RightArrow from "../ArrowButtons/RightArrow/RightArrow";
 import Donation from "../Donation/Donation";
 import Logo from "../Logo/Logo";
+import Socials from "../Socials/Socials";
 
 function Footer() {
   const FOOTER_LIST = [
@@ -13,7 +14,6 @@ function Footer() {
     { title: "contact us", href: "/contact" },
   ];
   const FOOTER_BRANDS = [
-    // { href: "#", img: "/icons/logo.svg", alt: "online zoo" },
     { href: "#", img: "/icons/yemdigital.svg", alt: "yem digital" },
     {
       href: "https://rs.school/courses/short-track",
@@ -63,13 +63,7 @@ function Footer() {
         </div>
         <hr className={styles.topLine} />
         <div className={styles.footerBody}>
-          <div className={styles.socialContainer}>
-            {SOCIAL_LIST.map((item) => (
-              <Link href={item.url} key={item.alt}>
-                <img src={item.img} alt={item.alt} />
-              </Link>
-            ))}
-          </div>
+          <Socials />
           <hr className={styles.bottomLine} />
           <ul className={styles.rights}>
             <li>© 2021 DinaK</li>

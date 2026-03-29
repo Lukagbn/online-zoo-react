@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import RightArrow from "../ArrowButtons/RightArrow/RightArrow";
 import { getUserFromToken } from "@/utils/auth";
 import Logo from "../Logo/Logo";
+import Socials from "../Socials/Socials";
 
 function Navbar() {
   const pathname = usePathname();
@@ -28,23 +29,6 @@ function Navbar() {
     {
       title: "design",
       url: "https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=0-1&t=Qtw6UTUpqk6Naxni-1",
-    },
-  ];
-  const SOCIAL_LIST = [
-    {
-      img: "/icons/youtube.svg",
-      url: "https://www.youtube.com/",
-      alt: "Youtube",
-    },
-    {
-      img: "/icons/instagram.svg",
-      url: "https://www.instagram.com/",
-      alt: "Instagram",
-    },
-    {
-      img: "/icons/facebook.svg",
-      url: "https://www.facebook.com/",
-      alt: "Facebook",
     },
   ];
   function LogOut() {
@@ -87,13 +71,7 @@ function Navbar() {
                 </li>
               ))}
             </ul>
-            <div className={styles.socialContainer}>
-              {SOCIAL_LIST.map((item) => (
-                <Link href={item.url} key={item.alt}>
-                  <img src={item.img} alt={item.alt} />
-                </Link>
-              ))}
-            </div>
+            <Socials isNavbar={true} />
           </nav>
           <div
             className={`${styles.burger} ${active ? styles.burgerActive : ""}`}
