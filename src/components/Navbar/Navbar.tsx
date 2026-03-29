@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import RightArrow from "../ArrowButtons/RightArrow/RightArrow";
 import { getUserFromToken } from "@/utils/auth";
+import Logo from "../Logo/Logo";
 
 function Navbar() {
   const pathname = usePathname();
@@ -60,7 +61,7 @@ function Navbar() {
       <header className={styles.header}>
         <div className={`${styles.container} ${layout.container}`}>
           <Link href={"#"} className={styles.logo}>
-            <img src="/icons/Logo.svg" alt="zoo logo" />
+            <Logo color="black" />
           </Link>
           <div className={styles.userContainer}>
             <img

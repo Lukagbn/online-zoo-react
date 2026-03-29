@@ -26,3 +26,27 @@
     gap: 20px;
   }
 }
+@media (min-width: 640px) {
+  .asideBox {
+    height: 100px;
+    .panda {
+      max-width: 40px;
+      height: 30px;
+    }
+    .pandaLg {
+      display: none;
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .asideBox {
+    height: 172px;
+    .panda {
+      max-width: 53px;
+      height: 40px;
+    }
+    .pandaLg {
+      display: none;
+    }
+  }
+}

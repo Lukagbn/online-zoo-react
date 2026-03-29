@@ -3,6 +3,7 @@ import layout from "@/app/layout.module.scss";
 import Link from "next/link";
 import RightArrow from "../ArrowButtons/RightArrow/RightArrow";
 import Donation from "../Donation/Donation";
+import Logo from "../Logo/Logo";
 
 function Footer() {
   const FOOTER_LIST = [
@@ -12,7 +13,7 @@ function Footer() {
     { title: "contact us", href: "/contact" },
   ];
   const FOOTER_BRANDS = [
-    { href: "#", img: "/icons/logo.svg", alt: "online zoo" },
+    // { href: "#", img: "/icons/logo.svg", alt: "online zoo" },
     { href: "#", img: "/icons/yemdigital.svg", alt: "yem digital" },
     {
       href: "https://rs.school/courses/short-track",
@@ -42,6 +43,7 @@ function Footer() {
       <div className={`${styles.footerContainer} ${layout.container}`}>
         <div className={styles.footerHeader}>
           <div className={styles.footerImgContainer}>
+            <Logo color="white" />
             {FOOTER_BRANDS.map((item) => (
               <Link href={item.href} target="_blank" key={item.alt}>
                 <img src={item.img} alt={item.alt} />

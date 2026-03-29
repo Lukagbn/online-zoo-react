@@ -17,6 +17,9 @@
   overflow-y: scroll;
   overflow-x: hidden;
   top: 110px;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
 }
 .aside img {
   cursor: pointer;
@@ -112,4 +115,28 @@
 }
 .aside .asideBox:nth-of-type(6) {
   border-bottom: 0;
+}
+@media (min-width: 640px) {
+  .aside {
+    max-width: 77px;
+    max-height: 500px;
+  }
+  .asideActive {
+    max-width: 233px;
+    .asideBox {
+      gap: 20px;
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .aside {
+    max-width: 150px;
+    max-height: 845px;
+  }
+  .asideActive {
+    max-width: 300px;
+    .asideBox {
+      gap: 20px;
+    }
+  }
 }
