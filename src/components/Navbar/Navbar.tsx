@@ -5,14 +5,20 @@ import layout from "@/app/layout.module.scss";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import RightArrow from "../ArrowButtons/RightArrow/RightArrow";
+import { getUserFromToken } from "@/utils/auth";
 
 function Navbar() {
   const pathname = usePathname();
   const [active, setActive] = useState(false);
   const [popUp, setpopUp] = useState(false);
-  const [user, setUser] = useState(false);
+  const [user, setUser] = useState<{
+    firstName: string;
+    lastName: string;
+    email: string;
+  } | null>(null);
   const [hoverLogIn, setHoverLogIn] = useState(false);
   const [hoverSignUp, sethoverSignUp] = useState(false);
+
   const NAVBAR_LIST = [
     { title: "about", url: "/" },
     { title: "map", url: "/map" },
@@ -40,14 +46,15 @@ function Navbar() {
       alt: "Facebook",
     },
   ];
+  function LogOut() {
+    localStorage.clear();
+    sessionStorage.clear();
+    window.location.reload();
+  }
   useEffect(() => {
-    const token = localStorage.getItem("user");
-    if (token) {
-      setUser(true);
-    } else {
-      setUser(false);
-    }
-  }, [user]);
+    const userData = getUserFromToken();
+    setUser(userData);
+  }, [pathname]);
   return (
     <>
       <header className={styles.header}>
@@ -55,12 +62,17 @@ function Navbar() {
           <Link href={"#"} className={styles.logo}>
             <img src="/icons/Logo.svg" alt="zoo logo" />
           </Link>
-          <img
-            className={styles.user}
-            src="/icons/usericon.svg"
-            alt="user"
-            onClick={() => setpopUp(!popUp)}
-          />
+          <div className={styles.userContainer}>
+            <img
+              className={styles.user}
+              src="/icons/usericon.svg"
+              alt="user"
+              onClick={() => setpopUp(!popUp)}
+            />
+            <p>
+              {user?.firstName} {user?.lastName}
+            </p>
+          </div>
           <nav className={styles.nav}>
             <ul
               className={`${styles.navList} ${active ? styles.navListActive : ""}`}
@@ -110,9 +122,11 @@ function Navbar() {
               <div
                 className={`${styles.loggedInUser} ${styles.loggedInUserActive}`}
               >
-                <h3>Hello</h3>
-                <h4>Your email is:</h4>
-                <button className={styles.logOutBtn}>Log out</button>
+                <h3>Hello {user.firstName + user.lastName}</h3>
+                <h4>Your email is: {user.email}</h4>
+                <button className={styles.logOutBtn} onClick={() => LogOut()}>
+                  Log out
+                </button>
               </div>
             ) : (
               <div className={styles.loggedOutUser}>
