@@ -19,8 +19,8 @@ function page() {
   if (hasError) return <FetchError className={styles.zoosError} />;
   return (
     <>
-      <Aside id={id as string} onError={() => setHasError(true)} />
-      <Camera id={id as string} onError={() => setHasError(true)} />
+      <Aside id={id as string} />
+      <Camera id={id as string} />
       <section className={styles.contentWrapper}>
         <CameraCarousel />
         <DonationBanner
@@ -28,12 +28,9 @@ function page() {
           title="Your donation makes a difference!"
           paragraph="The Online Zoo's animal webcams are some of the most famous on the internet. Tune in to watch your favourite animals — live, 24/7!"
         />
-        <DidYouKnow id={id as string} onError={() => setHasError(true)} />
-        <AnimalBio id={id as string} onError={() => setHasError(true)} />
-        <AnimalBioDescription
-          id={id as string}
-          onError={() => setHasError(true)}
-        />
+        <DidYouKnow id={id as string} />
+        <AnimalBio id={id as string} />
+        <AnimalBioDescription id={id as string} />
       </section>
     </>
   );

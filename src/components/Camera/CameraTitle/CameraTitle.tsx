@@ -3,14 +3,16 @@ import React, { useEffect, useState } from "react";
 import styles from "./CameraTitle.module.scss";
 import Loader from "@/components/Loader/Loader";
 import RightArrow from "@/components/ArrowButtons/RightArrow/RightArrow";
+import FetchError from "@/components/FetchError/FetchError";
 
 interface CameraProps {
   id: number;
   commonName: string;
 }
 
-function CameraTitle({ id, onError }: { id: string; onError: () => void }) {
+function CameraTitle({ id }: { id: string }) {
   const [cameraTitle, setCameraTitle] = useState<CameraProps | null>(null);
+  const [error, setError] = useState(false);
 
   async function fetchCameras() {
     try {
@@ -18,20 +20,21 @@ function CameraTitle({ id, onError }: { id: string; onError: () => void }) {
         `https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/pets/${id}`,
       );
       if (!res.ok) {
-        onError();
+        setError(true);
         return;
       }
       const result = await res.json();
       setCameraTitle(result.data);
     } catch (err) {
-      onError();
+      setError(true);
       console.error("err:", err);
     }
   }
   useEffect(() => {
     fetchCameras();
-  }, [id, onError]);
+  }, [id]);
 
+  if (error) return <FetchError />;
   if (!cameraTitle) return <Loader />;
 
   return (

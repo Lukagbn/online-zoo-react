@@ -23,29 +23,30 @@ interface PetProps {
   type: string;
 }
 
-function AnimalBio({ id, onError }: { id: string; onError: () => void }) {
+function AnimalBio({ id }: { id: string }) {
   const [petData, setPetData] = useState<PetProps | null>(null);
+  const [error, setError] = useState(false);
   async function fetchPet() {
     try {
       const res = await fetch(
         `https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/pets/${id}`,
       );
       if (!res.ok) {
-        onError();
+        setError(true);
         return;
       }
       const result: PetApiData = await res.json();
       setPetData(result.data);
     } catch (err) {
-      onError();
+      setError(true);
       console.log("err:", err);
     }
   }
   useEffect(() => {
     fetchPet();
   }, [id]);
+  if (error) return <FetchError />;
   if (!petData) return <Loader />;
-
   return (
     <section className={styles.animalBio}>
       <TextBox

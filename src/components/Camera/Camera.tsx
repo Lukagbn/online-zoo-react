@@ -1,9 +1,6 @@
 import React from "react";
 import styles from "./Camera.module.scss";
-import LeftArrow from "@/components/ArrowButtons/LeftArrow/LeftArrow";
-import RightArrow from "@/components/ArrowButtons/RightArrow/RightArrow";
 import CameraTitle from "./CameraTitle/CameraTitle";
-import layout from "@/app/layout.module.scss";
 
 interface CameraUrlsProps {
   id: number;
@@ -41,13 +38,13 @@ const CAMERA_URLS: CameraUrlsProps[] = [
   { id: 28, url: "https://www.youtube.com/embed/1p_8EffzFsY" },
 ];
 
-function Camera({ id, onError }: { id: string; onError: () => void }) {
+function Camera({ id }: { id: string }) {
   const cameraUrl = CAMERA_URLS[Number(id) - 1];
   return (
     <section className={styles.liveAnimal}>
       <div className={styles.innerContainer}>
         <div className={styles.liveAnimalHeader}>
-          <CameraTitle id={id} onError={onError} />
+          <CameraTitle id={id} />
           <div className={styles.pandaLiveWrapper}>
             {cameraUrl ? (
               <iframe

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Aside.module.scss";
 import AsideBox from "./AsideBox/AsideBox";
+import FetchError from "../FetchError/FetchError";
 
 interface AsideApiResponse {
   data: AsideBox[];
@@ -10,8 +11,9 @@ interface AsideBox {
   text: string;
 }
 
-function Aside({ id, onError }: { id: string; onError: () => void }) {
+function Aside({ id }: { id: string }) {
   const [cameras, seCameras] = useState<AsideBox[] | null>(null);
+  const [error, setError] = useState(false);
   const [expand, setExpand] = useState(false);
   async function fetchCams() {
     try {
@@ -19,19 +21,20 @@ function Aside({ id, onError }: { id: string; onError: () => void }) {
         "https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/cameras",
       );
       if (!res.ok) {
-        onError();
+        setError(true);
         return;
       }
       const result: AsideApiResponse = await res.json();
       seCameras(result.data);
     } catch (err) {
-      onError();
+      setError(true);
       console.log("error:", err);
     }
   }
   useEffect(() => {
     fetchCams();
-  }, []);
+  }, [id]);
+  if (error) return <FetchError />;
   if (!cameras) return;
   return (
     <aside className={`${styles.aside} ${expand ? styles.asideActive : ""}`}>
