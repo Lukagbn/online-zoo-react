@@ -45,21 +45,6 @@
     flex-direction: column;
     gap: 30px;
   }
-  .socialContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-    img {
-      width: 40px;
-    }
-    a {
-      transition: 0.4s ease-in-out;
-      &:hover {
-        scale: 1.1;
-      }
-    }
-  }
   .rights {
     list-style: none;
     text-align: center;
@@ -133,15 +118,6 @@
       max-width: 1200px;
       margin: auto;
       padding-inline: 40px;
-    }
-
-    .socialContainer {
-      display: flex;
-      gap: 30px;
-      img {
-        width: 40px;
-        height: 40px;
-      }
     }
   }
 }

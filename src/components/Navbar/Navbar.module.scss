@@ -29,9 +29,6 @@
   }
 }
 .nav {
-  .socialContainer {
-    display: none;
-  }
   .navList {
     opacity: 0;
     display: flex;
@@ -72,15 +69,6 @@
     }
     .active a {
       color: #00a092;
-    }
-  }
-  .socialContainer {
-    a {
-      transition: 0.4s ease-in-out;
-
-      &:hover {
-        scale: 1.1;
-      }
     }
   }
 }
@@ -255,14 +243,6 @@
         font-size: 18px;
         line-height: 150%;
         transition: 0.3s ease-in-out;
-      }
-    }
-    .socialContainer {
-      display: flex;
-      gap: 30px;
-      img {
-        width: 40px;
-        height: 40px;
       }
     }
   }
