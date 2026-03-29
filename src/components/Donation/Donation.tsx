@@ -1,11 +1,10 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import RightArrow from "../ArrowButtons/RightArrow/RightArrow";
 import styles from "./Donation.module.scss";
 
 function Donation() {
   const [donation, setDonation] = useState(false);
-  const dialogRef = useRef<HTMLDialogElement>(null);
   useEffect(() => {
     if (donation) {
       document.documentElement.classList.add("noScroll");
@@ -29,7 +28,6 @@ function Donation() {
         <div className={styles.overlay} onClick={() => setDonation(!donation)}>
           <dialog
             open
-            ref={dialogRef}
             className={styles.together}
             onClick={(e) => e.stopPropagation()}
           >

@@ -16,6 +16,12 @@
   width: 96px;
   height: 50px;
 }
+.user {
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  cursor: pointer;
+}
 .nav {
   .socialContainer {
     display: none;
@@ -62,12 +68,13 @@
       color: #00a092;
     }
   }
-}
-.socialContainer {
-  a {
-    transition: 0.4s ease-in-out;
-    &:hover {
-      scale: 1.1;
+  .socialContainer {
+    a {
+      transition: 0.4s ease-in-out;
+
+      &:hover {
+        scale: 1.1;
+      }
     }
   }
 }
@@ -75,6 +82,8 @@
   display: flex;
   flex-direction: column;
   gap: 11px;
+  flex-shrink: 0;
+  width: 22px;
   z-index: 2;
   cursor: pointer;
   span {
@@ -84,7 +93,6 @@
     transition: 0.4s ease-in-out;
   }
   &.burgerActive {
-    position: fixed;
     right: 20px;
     span {
       background: #ffffff;
@@ -100,7 +108,104 @@
     }
   }
 }
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.authDialogContainer {
+  height: 400px;
+  border: none;
+  border-radius: 5px;
+  max-width: 300px;
+  width: 100%;
+  position: relative;
+  &::backdrop {
+    background-color: #000000;
+    opacity: 0.7;
+  }
+  .loggedInUser {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
 
+    h4 {
+      text-align: center;
+    }
+    button {
+      text-decoration: none;
+      color: #20113d;
+      gap: 20px;
+      font-weight: 500;
+      padding: 10px;
+      border-radius: 5px;
+      transition: 0.4s ease-in-out;
+      max-width: 130px;
+      width: 100%;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #20113d;
+        color: #ffffff;
+      }
+    }
+  }
+  .loggedInUserActive {
+    display: flex;
+  }
+  .loggedOutUser {
+    display: flex;
+
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    gap: 30px;
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #20113d;
+      gap: 20px;
+      font-weight: 500;
+      padding: 10px;
+      border-radius: 5px;
+      transition: 0.4s ease-in-out;
+      max-width: 130px;
+      width: 100%;
+      justify-content: space-between;
+
+      &:hover {
+        background-color: #20113d;
+        color: #ffffff;
+      }
+    }
+  }
+  .loggedOutUserActive {
+    display: flex;
+  }
+  .authLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .closeModal {
+    font-weight: 600;
+    color: #00a092;
+    font-size: 25px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+  }
+}
 @media (min-width: 640px) {
   .burger.burgerActive {
     right: 20px;
