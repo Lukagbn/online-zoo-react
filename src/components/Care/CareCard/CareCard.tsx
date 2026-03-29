@@ -7,16 +7,19 @@ export interface CareCardProps {
   img: string;
   paragraph: string;
   alt: string;
+  title?: string;
+  url?: string;
 }
 
-function CareCard({ img, paragraph, alt }: CareCardProps) {
+function CareCard({ img, paragraph, alt, title, url }: CareCardProps) {
   return (
     <div className={styles.careCard}>
-      <Link href="#"></Link>
+      <Link href={url ?? ""}></Link>
       <div className={styles.cardHeader}>
         <img src={img} alt={alt} />
       </div>
       <div className={styles.cardBody}>
+        <h2 className={styles.title}>{title}</h2>
         <p>{paragraph}</p>
         <button type="button">
           feed

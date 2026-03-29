@@ -6,6 +6,7 @@ import RightArrow from "../ArrowButtons/RightArrow/RightArrow";
 import PetCard from "./PetCard/PetCard";
 import FetchError from "../FetchError/FetchError";
 import Loader from "../Loader/Loader";
+import Link from "next/link";
 
 interface PetsApiResponse {
   data: PetsProps[];
@@ -119,7 +120,7 @@ function PetSection() {
           onMouseEnter={() => setHoverFav(true)}
           onMouseLeave={() => setHoverFav(false)}
         >
-          Feed your favourite
+          <Link href={`/feed`}>Feed your favourite</Link>
           <RightArrow color={hoverFav ? "white" : "#20113d"} />
         </button>
       </div>

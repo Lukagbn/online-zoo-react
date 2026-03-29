@@ -25,7 +25,6 @@ interface PetProps {
 
 function AnimalBio({ id, onError }: { id: string; onError: () => void }) {
   const [petData, setPetData] = useState<PetProps | null>(null);
-  const [error, setError] = useState(false);
   async function fetchPet() {
     try {
       const res = await fetch(
