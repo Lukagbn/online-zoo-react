@@ -46,7 +46,7 @@ function PayAndFeed() {
     },
     {
       heroImg: "/images/eatingmonkey.png",
-      heroImgAlt: "banana",
+      heroImgAlt: "eating monkey",
       heroIcon: "/icons/food.png",
       heroIconAlt: "food",
       title: "Bring your food charity — straight to your favorites pets.",
