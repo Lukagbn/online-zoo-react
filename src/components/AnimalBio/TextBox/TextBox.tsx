@@ -111,13 +111,12 @@ function TextBox({
   const mapSrc = `https://maps.google.com/maps?q=${latitude},${longitude}&z=5&output=embed`;
   useEffect(() => {
     if (showMap) {
-      document.body.style.overflow = "hidden";
+      document.documentElement.classList.add("noScroll");
+      document.body.classList.add("noScroll");
     } else {
-      document.body.style.overflow = "";
+      document.documentElement.classList.remove("noScroll");
+      document.body.classList.remove("noScroll");
     }
-    return () => {
-      document.body.style.overflow = "";
-    };
   }, [showMap]);
   return (
     <section className={styles.animalBio}>

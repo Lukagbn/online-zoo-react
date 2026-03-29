@@ -83,7 +83,7 @@ function PayAndFeed() {
                   <p>{item.paragraph}</p>
                 </div>
                 {item.button == true ? (
-                  <button type="button" className="donate-volunteers">
+                  <button type="button">
                     donate now
                     <RightArrow color="white" />
                   </button>
