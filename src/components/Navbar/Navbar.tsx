@@ -40,6 +40,15 @@ function Navbar() {
     const userData = getUserFromToken();
     setUser(userData);
   }, [pathname]);
+  useEffect(() => {
+    if (popUp) {
+      document.documentElement.classList.add("noScroll");
+      document.body.classList.add("noScroll");
+    } else {
+      document.documentElement.classList.remove("noScroll");
+      document.body.classList.remove("noScroll");
+    }
+  }, [popUp]);
   return (
     <>
       <header className={styles.header}>

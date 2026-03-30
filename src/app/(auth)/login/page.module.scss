@@ -91,6 +91,10 @@
 .redirect {
   margin-block: 30px;
   text-align: center;
+  a {
+    color: rgba(0, 0, 255, 0.656);
+    text-decoration: underline;
+  }
 }
 .formSubmitError {
   color: red;
