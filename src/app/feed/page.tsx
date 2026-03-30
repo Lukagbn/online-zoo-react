@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import CareCard from "@/components/Care/CareCard/CareCard";
-import { ANIMAL_BIO_IMAGES } from "@/components/AnimalBio/TextBox/TextBox";
+import { ANIMAL_BIO_IMAGES } from "@/utils/animalImages";
 import styles from "./page.module.scss";
 import Loader from "@/components/Loader/Loader";
 import FetchError from "@/components/FetchError/FetchError";

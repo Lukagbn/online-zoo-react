@@ -4,6 +4,7 @@ import CareCard from "./CareCard/CareCard";
 import styles from "./Care.module.scss";
 import layout from "@/app/layout.module.scss";
 import { CareCardProps } from "./CareCard/CareCard";
+import Link from "next/link";
 
 function Care() {
   const CARE_CARDS: CareCardProps[] = [
@@ -64,7 +65,7 @@ function Care() {
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
         >
-          Feed Your Favourite
+          <Link href={"/feed"}>Feed Your Favourite</Link>
           <RightArrow color={hover ? "white" : "#20113d"} />
         </button>
       </div>

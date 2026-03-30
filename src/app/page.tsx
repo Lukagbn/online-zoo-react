@@ -12,18 +12,7 @@ import PayAndFeed from "@/components/PayAndFeed/PayAndFeed";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import Care from "@/components/Care/Care";
 import TouchAnimal from "@/components/TouchAnimal/TouchAnimal";
-import { ANIMAL_BIO_IMAGES } from "@/components/AnimalBio/TextBox/TextBox";
 import PetSection from "@/components/PetSection/PetSection";
-
-interface PetsApiResponse {
-  data: PetsProps[];
-}
-interface PetsProps {
-  id: number;
-  name: string;
-  commonName: string;
-  description: string;
-}
 
 export default function Home() {
   return (
@@ -36,7 +25,7 @@ export default function Home() {
               Explore the exciting and mysterious world of wild animals in a
               natural setting without leaving your home.
             </p>
-            <Link className={styles.viewLive} href="#">
+            <Link className={styles.viewLive} href="/zoos/1">
               VIEW LIVE CAM
               <RightArrow color="white" />
             </Link>
