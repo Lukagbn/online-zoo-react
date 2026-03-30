@@ -4,17 +4,17 @@ import styles from "./Socials.module.scss";
 
 const SOCIAL_LIST = [
   {
-    img: "/icons/youtube.svg",
+    img: "/icons/social/youtube.svg",
     url: "https://www.youtube.com/",
     alt: "Youtube",
   },
   {
-    img: "/icons/instagram.svg",
+    img: "/icons/social/instagram.svg",
     url: "https://www.instagram.com/",
     alt: "Instagram",
   },
   {
-    img: "/icons/facebook.svg",
+    img: "/icons/social/facebook.svg",
     url: "https://www.facebook.com/",
     alt: "Facebook",
   },
