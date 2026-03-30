@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import RightArrow from "../ArrowButtons/RightArrow/RightArrow";
 import CareCard from "./CareCard/CareCard";
 import styles from "./Care.module.scss";
-import layout from "@/app/layout.module.scss";
 import { CareCardProps } from "./CareCard/CareCard";
 import Link from "next/link";
 
