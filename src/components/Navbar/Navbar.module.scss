@@ -16,6 +16,9 @@
   width: 96px;
   height: 50px;
 }
+.userContainer.desktop {
+  display: none;
+}
 .userContainer {
   display: flex;
   flex-direction: column;
@@ -247,6 +250,13 @@
     }
   }
   .burger {
+    display: none;
+  }
+  .userContainer.desktop {
+    margin-inline: 0px;
+    display: block;
+  }
+  .userContainer.mobile {
     display: none;
   }
 }

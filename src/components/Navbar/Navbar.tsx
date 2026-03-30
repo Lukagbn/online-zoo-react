@@ -47,7 +47,7 @@ function Navbar() {
           <Link href={"#"} className={styles.logo}>
             <Logo color="black" />
           </Link>
-          <div className={styles.userContainer}>
+          <div className={`${styles.userContainer} ${styles.mobile}`}>
             <img
               className={styles.user}
               src="/icons/usericon.svg"
@@ -73,6 +73,17 @@ function Navbar() {
             </ul>
             <Socials isNavbar={true} />
           </nav>
+          <div className={`${styles.userContainer} ${styles.desktop}`}>
+            <img
+              className={styles.user}
+              src="/icons/usericon.svg"
+              alt="user"
+              onClick={() => setpopUp(!popUp)}
+            />
+            <p>
+              {user?.firstName} {user?.lastName}
+            </p>
+          </div>
           <div
             className={`${styles.burger} ${active ? styles.burgerActive : ""}`}
             onClick={() => setActive(!active)}
