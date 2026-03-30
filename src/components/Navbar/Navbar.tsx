@@ -62,14 +62,20 @@ function Navbar() {
             <ul
               className={`${styles.navList} ${active ? styles.navListActive : ""}`}
             >
-              {NAVBAR_LIST.map((item) => (
-                <li
-                  key={item.title}
-                  className={`${pathname === item.url ? styles.active : null}`}
-                >
-                  <Link href={item.url}>{item.title}</Link>
-                </li>
-              ))}
+              {NAVBAR_LIST.map((item) => {
+                const isActive =
+                  pathname === item.url ||
+                  (item.url.startsWith("/zoos") &&
+                    pathname.startsWith("/zoos"));
+                return (
+                  <li
+                    key={item.title}
+                    className={`${isActive ? styles.active : ""}`}
+                  >
+                    <Link href={item.url}>{item.title}</Link>
+                  </li>
+                );
+              })}
             </ul>
             <Socials isNavbar={true} />
           </nav>
