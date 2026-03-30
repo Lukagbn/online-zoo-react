@@ -88,7 +88,8 @@ function MakeYourDonation({
 
   useEffect(() => {
     if (open) {
-      document.body.style.overflow = "hidden";
+      document.documentElement.classList.add("noScroll");
+      document.body.classList.add("noScroll");
       const user = getUserFromToken();
       if (user) {
         setName(`${user.firstName} ${user.lastName}`);
@@ -100,11 +101,9 @@ function MakeYourDonation({
         setRememberCard(true);
       }
     } else {
-      document.body.style.overflow = "";
+      document.documentElement.classList.remove("noScroll");
+      document.body.classList.remove("noScroll");
     }
-    return () => {
-      document.body.style.overflow = "";
-    };
   }, [open]);
 
   const getAmount = () => {
