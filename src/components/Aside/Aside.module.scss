@@ -147,6 +147,8 @@ $transition-smooth: 0.4s ease-in-out;
 }
 
 .asideBoxWrapper {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   overflow-y: scroll;
   &::-webkit-scrollbar {

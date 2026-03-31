@@ -15,27 +15,40 @@ $transition-smooth: 0.4s ease-in-out;
     width: 100%;
     display: block;
   }
-  .panda {
-    max-width: 26px;
-    height: 20px;
+  .imgWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .animal {
+      max-width: 26px;
+      height: 20px;
+    }
+    &Active {
+      background-color: #ffffff;
+      padding: 10px;
+      border-radius: 50%;
+    }
   }
-  .pandaLg {
-    display: none;
+  &Active {
+    order: -1;
   }
-
   @media (min-width: 640px) {
     height: 100px;
-    .panda {
-      max-width: 40px;
-      height: 30px;
+    .imgWrapper {
+      .animal {
+        max-width: 40px;
+        height: 30px;
+      }
     }
   }
 
   @media (min-width: 1200px) {
     height: 172px;
-    .panda {
-      max-width: 53px;
-      height: 40px;
+    .imgWrapper {
+      .animal {
+        max-width: 53px;
+        height: 40px;
+      }
     }
   }
 }
