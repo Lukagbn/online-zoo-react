@@ -38,7 +38,7 @@ function Aside({ id }: { id: string }) {
   if (!cameras) return;
   return (
     <aside className={`${styles.aside} ${expand ? styles.asideActive : ""}`}>
-      <div className={styles.asideBox}>
+      <div className={styles.cameraWrapper}>
         <span>
           live <img src="/icons/camera.svg" alt="live" />
         </span>
@@ -49,9 +49,19 @@ function Aside({ id }: { id: string }) {
           alt="expand arrow"
         />
       </div>
-      {cameras.map((aside) => (
-        <AsideBox key={aside.id} id={aside.id.toString()} title={aside.text} />
-      ))}
+      <div className={styles.asideBoxWrapper}>
+        {cameras.map((aside) => (
+          <AsideBox
+            expand={expand}
+            key={aside.id}
+            id={aside.id.toString()}
+            title={aside.text}
+          />
+        ))}
+      </div>
+      <div className={styles.arrowDown}>
+        <img src="/icons/arrowdown.svg" alt="arrow down" />
+      </div>
     </aside>
   );
 }
