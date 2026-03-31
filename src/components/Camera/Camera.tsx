@@ -45,22 +45,20 @@ function Camera({ id }: { id: string }) {
       <div className={styles.innerContainer}>
         <div className={styles.liveAnimalHeader}>
           <CameraTitle id={id} />
-          <div className={styles.pandaLiveWrapper}>
-            {cameraUrl ? (
-              <iframe
-                className={styles.pandaLive}
-                width="100%"
-                height="100%"
-                src={cameraUrl.url}
-                title="Live Animal Cam"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            ) : (
-              <p>No camera avaliable!</p>
-            )}
-          </div>
+          {cameraUrl ? (
+            <iframe
+              className={styles.live}
+              width="100%"
+              height="100%"
+              src={cameraUrl.url}
+              title="Live Animal Cam"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          ) : (
+            <p>No camera avaliable!</p>
+          )}
         </div>
       </div>
     </section>

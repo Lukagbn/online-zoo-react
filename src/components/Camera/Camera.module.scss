@@ -1,82 +1,75 @@
+$accent-orange: #f58021;
+$teal-primary: #00a092;
+$transition-smooth: 0.4s ease-in-out;
+
 .innerContainer {
   display: flex;
   flex-direction: column;
+  @media (min-width: 640px) {
+    padding-right: 20px;
+  }
+  @media (min-width: 1200px) {
+    padding-right: 40px;
+  }
+  @media (min-width: 1920px) {
+    max-width: 1400px;
+    margin: auto;
+    padding-inline: 0;
+  }
 }
 .liveAnimal {
   max-width: calc(100% - 50px);
   margin-left: auto;
-}
-.liveAnimal img {
-  width: 100%;
-  display: block;
-}
-.liveAnimalHeader .pandaLive {
-  height: 200px;
-  border-radius: 5px;
-}
-.pandaLiveWrapper {
-  position: relative;
-}
-.pandaLiveWrapper .liveBtn {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 18px;
-  width: 100%;
-  height: 13px;
-}
-.pandaLiveWrapper:hover .liveBtn path {
-  fill: #f58021;
-  transition: 0.4s ease-in-out;
+  @media (min-width: 640px) {
+    max-width: calc(100% - 77px);
+    width: 100%;
+  }
+  @media (min-width: 1200px) {
+    max-width: calc(100% - 135px);
+    width: 100%;
+  }
+  img {
+    width: 100%;
+    display: block;
+  }
 }
 .liveAnimalHeader {
+  .live {
+    height: 200px;
+    border-radius: 5px;
+    @media (min-width: 640px) {
+      width: 100%;
+      height: 402px;
+      padding-left: 0;
+    }
+    @media (min-width: 1200px) {
+      height: 760px;
+    }
+  }
+  h2 {
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 31.7px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: $teal-primary;
+    text-align: right;
+    margin-block: 20px;
+    margin-right: 10px;
+    @media (min-width: 640px) {
+      font-size: 42px;
+      text-align: center;
+      margin-block: 26px;
+    }
+  }
   button {
     display: none;
   }
   .bottom {
     max-width: 212px;
+    height: 48px;
     display: flex;
     justify-self: end;
     margin-block: 20px;
-    height: 48px;
-  }
-}
-.liveAnimalHeader h2 {
-  font-size: 26px;
-  font-weight: 500;
-  letter-spacing: 0%;
-  text-transform: uppercase;
-  color: #00a092;
-  margin-block: 20px;
-  text-align: right;
-  margin-right: 10px;
-  line-height: 31.7px;
-}
-@media (min-width: 640px) {
-  .liveAnimal {
-    width: 100%;
-  }
-  .innerContainer {
-    padding-right: 20px;
-  }
-  .pandaLiveWrapper .liveBtn {
-    max-width: 38px;
-    height: 26px;
-  }
-  .liveAnimalHeader .pandaLive {
-    width: 100%;
-    height: 402px;
-    padding-left: 0;
-  }
-  .liveAnimalHeader h2 {
-    font-size: 42px;
-    text-align: center;
-    margin-block: 26px;
-  }
-}
-@media (min-width: 1200px) {
-  .innerContainer {
-    padding-right: 40px;
   }
 }

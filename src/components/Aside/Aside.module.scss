@@ -113,6 +113,17 @@ $transition-smooth: 0.4s ease-in-out;
   }
 
   @media (min-width: 1200px) {
+    max-width: 115px;
+    max-height: 845px;
+
+    &Active {
+      max-width: 300px;
+      .asideBox {
+        gap: 20px;
+      }
+    }
+  }
+  @media (min-width: 1920px) {
     max-width: 150px;
     max-height: 845px;
 
