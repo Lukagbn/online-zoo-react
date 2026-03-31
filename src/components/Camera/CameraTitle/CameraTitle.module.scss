@@ -17,6 +17,7 @@ $transition-smooth: 0.4s ease-in-out;
     margin-right: 10px;
   }
   @media (min-width: 1200px) {
+    gap: 0px;
     margin-block: 30px;
     display: flex;
     align-items: center;
@@ -35,9 +36,6 @@ $transition-smooth: 0.4s ease-in-out;
         background-color: $dark-orange;
       }
     }
-  }
-  @media (min-width: 1920px) {
-    gap: 0px;
     h2 {
       margin: auto;
     }
