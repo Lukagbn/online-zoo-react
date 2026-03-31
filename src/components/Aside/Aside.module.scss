@@ -125,6 +125,16 @@ $transition-smooth: 0.4s ease-in-out;
   }
 }
 
+.expandAside {
+  max-height: calc(100vh - 110px);
+  .arrowDown {
+    img {
+      transition: $transition-smooth;
+      transform: rotate(180deg);
+    }
+  }
+}
+
 .asideBoxWrapper {
   width: 100%;
   overflow-y: scroll;

@@ -15,6 +15,7 @@ function Aside({ id }: { id: string }) {
   const [cameras, seCameras] = useState<AsideBox[] | null>(null);
   const [error, setError] = useState(false);
   const [expand, setExpand] = useState(false);
+  const [expandAside, setExpandAside] = useState(false);
   async function fetchCams() {
     try {
       const res = await fetch(
@@ -37,7 +38,13 @@ function Aside({ id }: { id: string }) {
   if (error) return <FetchError />;
   if (!cameras) return;
   return (
-    <aside className={`${styles.aside} ${expand ? styles.asideActive : ""}`}>
+    <aside
+      className={
+        expandAside
+          ? `${styles.aside} ${styles.expandAside} ${expand ? styles.asideActive : ""}`
+          : `${styles.aside} ${expand ? styles.asideActive : ""}`
+      }
+    >
       <div className={styles.cameraWrapper}>
         <span>
           live <img src="/icons/camera.svg" alt="live" />
@@ -60,7 +67,11 @@ function Aside({ id }: { id: string }) {
         ))}
       </div>
       <div className={styles.arrowDown}>
-        <img src="/icons/arrowdown.svg" alt="arrow down" />
+        <img
+          src="/icons/arrowdown.svg"
+          alt="arrow down"
+          onClick={() => setExpandAside(!expandAside)}
+        />
       </div>
     </aside>
   );
