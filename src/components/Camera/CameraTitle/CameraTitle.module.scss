@@ -1,54 +1,68 @@
+$accent-orange: #f58021;
+$dark-orange: #d26004;
+$teal-primary: #00a092;
+$white: #ffffff;
+$transition-smooth: 0.4s ease-in-out;
+
 .liveAnimalHeaderWrapper {
   h2 {
     font-size: 26px;
     font-weight: 500;
+    line-height: 31.7px;
     letter-spacing: 0%;
     text-transform: uppercase;
-    color: #00a092;
+    color: $teal-primary;
     margin-block: 20px;
     text-align: right;
     margin-right: 10px;
-    line-height: 31.7px;
   }
-}
-@media (min-width: 1200px) {
-  .viewLive {
-    background-color: #f58021;
-    width: 100%;
-    height: 45px;
-    outline: none;
-    border: none;
-    line-height: 21.9px;
-    letter-spacing: 0px;
-    font-size: 18px;
-    font-weight: 600;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    border-radius: 5px;
-    margin-top: 30px;
-    transition: 0.4s ease-in-out;
-    text-decoration: none;
-  }
-  .liveAnimalHeaderWrapper {
+  @media (min-width: 1200px) {
     margin-block: 30px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 71px;
-  }
-  .liveAnimalHeaderWrapper {
     button {
-      max-width: 240px;
       display: flex;
+      width: 100%;
+      max-width: 240px;
+      height: 56px;
       justify-self: end;
       margin-block: 20px;
-      height: 56px;
+      background-color: $accent-orange;
+      transition: $transition-smooth;
       &:hover {
-        background-color: #d26004;
+        background-color: $dark-orange;
       }
     }
+  }
+  @media (min-width: 1920px) {
+    gap: 0px;
+    h2 {
+      margin: auto;
+    }
+  }
+}
+
+.viewLive {
+  @media (min-width: 1200px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 45px;
+    margin-top: 30px;
+    gap: 10px;
+    background-color: $accent-orange;
+    color: $white;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21.9px;
+    letter-spacing: 0px;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: $transition-smooth;
   }
 }
