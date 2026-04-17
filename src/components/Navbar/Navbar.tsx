@@ -24,7 +24,7 @@ function Navbar() {
   const NAVBAR_LIST = [
     { title: "about", url: "/" },
     { title: "map", url: "/map" },
-    { title: "zoos", url: "/zoos/1" },
+    { title: "zoos", url: "/zoos/69daad067f3cf0b0069a12c4" },
     { title: "contact us", url: "/contact" },
     {
       title: "design",

@@ -13,25 +13,12 @@ import Testimonials from "@/components/Testimonials/Testimonials";
 import Care from "@/components/Care/Care";
 import TouchAnimal from "@/components/TouchAnimal/TouchAnimal";
 import PetSection from "@/components/PetSection/PetSection";
+import HeroSection from "@/components/HeroSection/HeroSection";
 
 export default function Home() {
   return (
     <>
-      <section className={styles.hero}>
-        <div className={`${styles.heroContainer} ${layout.container}`}>
-          <div className={styles.heroContent}>
-            <h2>Watch your favorite animal online</h2>
-            <p>
-              Explore the exciting and mysterious world of wild animals in a
-              natural setting without leaving your home.
-            </p>
-            <Link className={styles.viewLive} href="/zoos/1">
-              VIEW LIVE CAM
-              <RightArrow color="white" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
       <section className={styles.heroIntro}>
         <div className={layout.container}>
           <div className={styles.introWelcome}>

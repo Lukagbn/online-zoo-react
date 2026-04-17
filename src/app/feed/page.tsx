@@ -11,7 +11,7 @@ interface PetsApiResponse {
 }
 
 interface PetsData {
-  id: number;
+  _id: string;
   name: string;
   commonName: string;
   description: string;
@@ -24,7 +24,7 @@ function Page() {
   async function fetchPets() {
     try {
       const res = await fetch(
-        "https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/pets",
+        "https://online-zoo-backend.onrender.com/animals",
       );
       if (!res.ok) {
         setError(true);
@@ -47,13 +47,13 @@ function Page() {
     <section className={styles.feedContainer}>
       <h2>Feed Animals You Love!</h2>
       <div className={styles.feedCardWrapper}>
-        {petCard?.map((card) => {
-          const image = ANIMAL_BIO_IMAGES.find((img) => img.id === card.id);
-
+        {petCard?.map((card, index) => {
+          const image = ANIMAL_BIO_IMAGES.find((img) => img.id === card._id);
+          console.log(card, ANIMAL_BIO_IMAGES[index].id);
           return (
             <CareCard
-              key={card.id}
-              url={`feed/${card.id}`}
+              key={card._id}
+              url={`feed/${card._id}`}
               img={image?.url || ""}
               title={card.name}
               alt={image?.alt || card.commonName}

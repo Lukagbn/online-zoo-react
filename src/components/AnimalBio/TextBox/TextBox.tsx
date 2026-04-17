@@ -3,6 +3,7 @@ import styles from "./TextBox.module.scss";
 import RightArrow from "@/components/ArrowButtons/RightArrow/RightArrow";
 import { AnimalBioProps } from "@/utils/animalImages";
 import { ANIMAL_BIO_IMAGES } from "@/utils/animalImages";
+import AnimalBio from "../AnimalBio";
 
 function TextBox({
   commonName,
@@ -27,7 +28,7 @@ function TextBox({
   ];
   const [hover, setHover] = useState(false);
   const [showMap, setShowMap] = useState(false);
-  const animalBioImg = ANIMAL_BIO_IMAGES[Number(id) - 1];
+  const animalBioImg = ANIMAL_BIO_IMAGES.find((image) => image.id === id);
   const mapSrc = `https://maps.google.com/maps?q=${latitude},${longitude}&z=5&output=embed`;
   useEffect(() => {
     if (showMap) {

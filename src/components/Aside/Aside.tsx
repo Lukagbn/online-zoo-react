@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import styles from "./Aside.module.scss";
 import AsideBox from "./AsideBox/AsideBox";
@@ -7,7 +8,7 @@ interface AsideApiResponse {
   data: AsideBox[];
 }
 interface AsideBox {
-  id: number;
+  animalId: string;
   text: string;
 }
 
@@ -19,7 +20,7 @@ function Aside({ id }: { id: string }) {
   async function fetchCams() {
     try {
       const res = await fetch(
-        "https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/cameras",
+        "https://online-zoo-backend.onrender.com/animals/cameras",
       );
       if (!res.ok) {
         setError(true);
@@ -60,8 +61,8 @@ function Aside({ id }: { id: string }) {
         {cameras.map((aside) => (
           <AsideBox
             expand={expand}
-            key={aside.id}
-            id={aside.id.toString()}
+            key={aside.animalId}
+            id={aside.animalId}
             title={aside.text}
           />
         ))}
