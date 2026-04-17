@@ -14,7 +14,10 @@ function HeroSection() {
             Explore the exciting and mysterious world of wild animals in a
             natural setting without leaving your home.
           </p>
-          <Link className={styles.viewLive} href="/zoos/1">
+          <Link
+            className={styles.viewLive}
+            href="/zoos/69daad067f3cf0b0069a12c4"
+          >
             VIEW LIVE CAM
             <RightArrow color="white" />
           </Link>

@@ -154,49 +154,6 @@
   display: none;
 }
 @media (min-width: 640px) {
-  .hero {
-    height: unset;
-    padding-top: 50px;
-    background-position: right bottom;
-    padding-bottom: 50px;
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0.95) 0%,
-        rgba(255, 255, 255, 0.8) 35%,
-        rgba(255, 255, 255, 0.4) 55%,
-        rgba(255, 255, 255, 0) 75%
-      );
-    }
-    h2 {
-      font-size: 72px;
-      letter-spacing: 1%;
-      line-height: 83.5px;
-    }
-    p {
-      max-width: 339px;
-      line-height: 141%;
-    }
-    .heroImg {
-      display: none;
-    }
-  }
-  .heroContent {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .heroContainer {
-    position: relative;
-  }
-  .viewLive {
-    text-align: left;
-    height: 74px;
-    max-width: 285px;
-  }
   .heroIntro {
     margin-top: 100px;
     margin-bottom: 100px;
@@ -226,32 +183,5 @@
       display: block;
       margin: auto;
     }
-  }
-}
-
-@media (min-width: 1200px) {
-  .hero {
-    padding-top: 100px;
-    padding-bottom: 100px;
-    h2 {
-      font-size: 82px;
-      line-height: 93px;
-    }
-  }
-  .heroContent {
-    margin-inline: 0;
-  }
-  .viewLive {
-    max-width: 240px;
-  }
-}
-
-@media (min-width: 1920px) {
-  .hero {
-    background-size: 80% 100%;
-  }
-  .heroContainer {
-    padding-inline: 0px;
-    max-width: 1400px;
   }
 }
