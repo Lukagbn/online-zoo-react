@@ -34,6 +34,7 @@ function PetSection() {
       if (!res.ok) {
         setError(true);
         console.log("Something went wrong. Please, refresh the page");
+        return;
       }
       setPets(result.data);
     } catch (err) {
@@ -103,7 +104,7 @@ function PetSection() {
         </div>
       </div>
       <div className={styles.petsCardContainer} ref={containerRef}>
-        {pets?.map((pet) => (
+        {pets.map((pet) => (
           <PetCard
             key={pet._id}
             _id={pet._id}

@@ -37,7 +37,14 @@ function Aside({ id }: { id: string }) {
     fetchCams();
   }, [id]);
   if (error) return <FetchError />;
-  if (!cameras) return;
+  if (!cameras)
+    return (
+      <aside className={styles.asideLoader}>
+        {Array.from({ length: 5 }, (_, i) => (
+          <div key={i} className={styles.asideBoxLoader}></div>
+        ))}
+      </aside>
+    );
   return (
     <aside
       className={
