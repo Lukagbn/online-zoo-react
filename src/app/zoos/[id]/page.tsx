@@ -42,7 +42,7 @@ function page() {
   async function fetchPet() {
     try {
       const res = await fetch(
-        `https://online-zoo-backend.onrender.com/animals/${id}`,
+        `https://online-zoo-backend.onrender.com/animals/details/${id}`,
       );
       const result: PetProps = await res.json();
       setPetData(result);

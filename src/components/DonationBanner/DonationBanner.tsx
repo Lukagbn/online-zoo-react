@@ -32,7 +32,7 @@ function DonationBanner({ title, paragraph, className }: DonationProps) {
           </div>
           <div className={styles.donationAction}>
             <h3>Quick Donate</h3>
-            <button type="button" onClick={() => setPressed(!pressed)}>
+            <button type="button" onClick={() => setPressed(true)}>
               $ donation amount
               <div className={styles.arrowBtnBackground}>
                 <RightArrow color="white" />
@@ -41,7 +41,7 @@ function DonationBanner({ title, paragraph, className }: DonationProps) {
           </div>
         </div>
       </div>
-      <MakeYourDonation open={pressed} />
+      <MakeYourDonation open={pressed} onClose={() => setPressed(false)} />
     </section>
   );
 }

@@ -4,12 +4,24 @@ import CameraTitle from "./CameraTitle/CameraTitle";
 import { PetProps } from "@/app/zoos/[id]/page";
 
 function Camera({ petData }: { petData: PetProps | null }) {
+  if (!petData?.video) {
+    return (
+      <section className={styles.liveAnimal}>
+        <div className={styles.innerContainer}>
+          <div className={styles.liveAnimalHeader}>
+            <CameraTitle petData={petData || null} />
+            <div className={styles.videoLoader}></div>
+          </div>
+        </div>
+      </section>
+    );
+  }
   return (
     <section className={styles.liveAnimal}>
       <div className={styles.innerContainer}>
         <div className={styles.liveAnimalHeader}>
           <CameraTitle petData={petData || null} />
-          {petData?.video ? (
+          {petData.video ? (
             <iframe
               className={styles.live}
               width="100%"

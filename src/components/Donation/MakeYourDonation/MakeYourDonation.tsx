@@ -1,59 +1,67 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./MakeYourDonation.module.scss";
+import DonationContent from "./DonationContent/DonationContent";
 
-function MakeYourDonation({ open }: { open: boolean }) {
-  const DONATION_PRICE = ["10", "20", "30", "50", "80", "100"];
-  const DROPDOWN_PETS = [
-    "Lukas the Panda",
-    "Andy the Lemur",
-    "Glen the Gorilla",
-    "Mike the Alligator",
-    "Sam & Lora the eagles",
-    "Liz the Koala",
-    "Shake the Lion",
-    "Senja the Tiger",
-  ];
-  const [dropdown, setDropdown] = useState(false);
+function MakeYourDonation({
+  open,
+  onClose,
+}: {
+  open: boolean;
+  onClose: () => void;
+}) {
+  const [activeIndex, setActiveIndex] = useState<number | 0>(0);
+
+  function handleNext() {
+    if (activeIndex >= 2) return;
+    setActiveIndex(activeIndex + 1);
+  }
+  function handleBack() {
+    if (activeIndex <= 0) return;
+    setActiveIndex(activeIndex - 1);
+  }
+  if (!open) return null;
+
   return (
-    <div className={styles.overlay}>
-      {open ? (
-        <dialog open>
-          <h2>MakeYourDonation</h2>
-          <p>donation information</p>
-          <hr />
-          <div className={styles.btnWrapper}>
-            {DONATION_PRICE.map((btn) => (
-              <button key={btn}>{btn}</button>
+    <div className={styles.overlay} onClick={onClose}>
+      <dialog
+        open={open}
+        className={styles.dialog}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className={styles.popupHeader}>
+          <h2>Make Your Donation</h2>
+        </div>
+        <DonationContent stepIndex={activeIndex} />
+        <div className={styles.modalFooter}>
+          <div className={styles.dotsWrapper}>
+            {[0, 1, 2].map((i) => (
+              <span
+                key={i}
+                className={`${styles.dot} ${activeIndex >= i ? styles.dotActive : ""}`}
+              />
             ))}
-            <div className={styles.formGroup}>
-              <button>other</button>
-              <input type="number" />
-            </div>
-            <button>for special pet</button>
-            <div
-              className={
-                dropdown
-                  ? `${styles.dropDown} ${styles.dropDownActive}`
-                  : `${styles.dropDown}`
-              }
-              onClick={() => setDropdown(!dropdown)}
-            >
-              {/* <div className={styles.selectedContainer}>
-                <div className="selected">Choose your favorite</div>
-                <span>
-                  <img src="/icons/arrowdown.svg" alt="drop down arrow" />
-                </span>
-              </div> */}
-              <ul className={styles.dropDownList}>
-                {DROPDOWN_PETS.map((list) => (
-                  <li key={list}>{list}</li>
-                ))}
-              </ul>
-            </div>
           </div>
-        </dialog>
-      ) : null}
+          {activeIndex > 0 ? (
+            <button
+              className={styles.back}
+              onClick={() => {
+                handleBack();
+              }}
+            >
+              back
+            </button>
+          ) : null}
+          <button
+            className={styles.next}
+            onClick={() => {
+              handleNext();
+            }}
+          >
+            Next
+          </button>
+        </div>
+      </dialog>
     </div>
   );
 }
