@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import styles from "./DonationContent.module.scss";
 
@@ -17,28 +18,96 @@ const DROPDOWN_PETS = [
   "Shake the Lion",
   "Senja the Tiger",
 ];
-function DonationContent({ stepIndex }: { stepIndex: number }) {
+
+interface DonationContentProps {
+  stepIndex: number;
+  donationAmount: number | null;
+  setDonationAmount: (val: number | null) => void;
+  pet: string | null;
+  setPet: (val: string | null) => void;
+  btnIndex: number | null;
+  setBtnIndex: (val: number | null) => void;
+  nameInput: string | null;
+  setNameInput: (val: string | null) => void;
+  emailInput: string | null;
+  setEmailInput: (val: string | null) => void;
+  nameError: string;
+  setNameError: (val: string) => void;
+  emailError: string;
+  setEmailError: (val: string) => void;
+  card: { creditNumber: string; cvv: string; month: string; year: string };
+  setCard: (val: {
+    creditNumber: string;
+    cvv: string;
+    month: string;
+    year: string;
+  }) => void;
+  cardErrors: {
+    creditNumber: string;
+    cvv: string;
+    month: string;
+    year: string;
+  };
+  setCardErrors: (val: {
+    creditNumber: string;
+    cvv: string;
+    month: string;
+    year: string;
+  }) => void;
+  rememberCard: boolean;
+  setRememberCard: (val: boolean) => void;
+  submitError: string;
+  isValidAmount: (val: number) => boolean;
+  isValidName: (val: string) => boolean;
+  isValidEmail: (val: string) => boolean;
+}
+
+function DonationContent({
+  stepIndex,
+  donationAmount,
+  setDonationAmount,
+  pet,
+  setPet,
+  btnIndex,
+  setBtnIndex,
+  nameInput,
+  setNameInput,
+  emailInput,
+  setEmailInput,
+  nameError,
+  setNameError,
+  emailError,
+  setEmailError,
+  card,
+  setCard,
+  cardErrors,
+  setCardErrors,
+  rememberCard,
+  setRememberCard,
+  submitError,
+  isValidAmount,
+  isValidEmail,
+  isValidName,
+}: DonationContentProps) {
   const [dropdown, setDropdown] = useState(false);
-  const [btnIndex, setBtnIndex] = useState<number | null>(null);
-  const [donationAmount, setDonationAmount] = useState<number | null>(null);
+
   function stepper(index: number) {
     switch (index) {
       case 0:
         return (
           <div>
-            {" "}
             <p className={styles.buttonLabel}>Choose your donation amount:</p>
             <div className={styles.btnWrapper}>
-              {DONATION_PRICE.map((btn, index) => (
+              {DONATION_PRICE.map((btn, i) => (
                 <button
                   key={btn}
                   className={
-                    btnIndex === index && donationAmount === Number(btn)
+                    btnIndex === i && donationAmount === Number(btn)
                       ? styles.Active
                       : ""
                   }
                   onClick={() => {
-                    setBtnIndex(index);
+                    setBtnIndex(i);
                     setDonationAmount(Number(btn));
                   }}
                 >
@@ -73,7 +142,7 @@ function DonationContent({ stepIndex }: { stepIndex: number }) {
               >
                 <div className={styles.selectedContainer}>
                   <div className="selected" style={{ color: "black" }}>
-                    Choose your favorite
+                    <p>{pet ?? "Choose your favorite"}</p>
                   </div>
                   <span>
                     <img src="/icons/arrowdown.svg" alt="drop down arrow" />
@@ -81,30 +150,169 @@ function DonationContent({ stepIndex }: { stepIndex: number }) {
                 </div>
                 <ul className={styles.dropDownList}>
                   {DROPDOWN_PETS.map((list) => (
-                    <li key={list}>{list}</li>
+                    <li key={list} onClick={() => setPet(list)}>
+                      {list}
+                    </li>
                   ))}
                 </ul>
               </div>
             </div>
+            <div className={styles.checkBox}>
+              <label htmlFor="monthly">
+                Make this a monthly recurring gift
+              </label>
+              <input id="monthly" type="checkbox" />
+            </div>
           </div>
         );
+
       case 1:
         return (
-          <div>
+          <div className={styles.step}>
             <div className={styles.formGroup}>
               <label htmlFor="name">Your Name</label>
-              <input id="name" type="text" />
+              <input
+                id="name"
+                type="text"
+                placeholder="First and last name"
+                value={nameInput ?? ""}
+                onChange={(e) => {
+                  const val = e.target.value;
+                  setNameInput(val);
+                  setNameError(
+                    isValidName(val)
+                      ? ""
+                      : "Name can only contain letters and spaces.",
+                  );
+                }}
+              />
+              {nameError && <span className={styles.error}>{nameError}</span>}
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="email">Your Email Address</label>
-              <input id="email" type="text" />
+              <input
+                id="email"
+                type="text"
+                placeholder="Enter your email"
+                value={emailInput ?? ""}
+                onChange={(e) => {
+                  const val = e.target.value;
+                  setEmailInput(val);
+                  setEmailError(
+                    isValidEmail(val)
+                      ? ""
+                      : "Please enter a valid email address.",
+                  );
+                }}
+              />
+              {emailError && <span className={styles.error}>{emailError}</span>}
+            </div>
+            <p className={styles.receiveEmail}>
+              You will receive emails from the Online Zoo, including updates and
+              news. You can unsubscribe at any time.
+            </p>
+          </div>
+        );
+
+      case 2:
+        return (
+          <div className={styles.step}>
+            <div className={styles.formGroup}>
+              <label htmlFor="credit">Credit Card Number</label>
+              <input
+                id="credit"
+                type="text"
+                maxLength={16}
+                value={card.creditNumber}
+                onChange={(e) => {
+                  setCard({
+                    ...card,
+                    creditNumber: e.target.value.replace(/\D/g, ""),
+                  });
+                  setCardErrors({ ...cardErrors, creditNumber: "" });
+                }}
+              />
+              {cardErrors.creditNumber && (
+                <span className={styles.error}>{cardErrors.creditNumber}</span>
+              )}
+            </div>
+            <div className={styles.formGroup}>
+              <label htmlFor="cvv">CVV Number</label>
+              <input
+                id="cvv"
+                type="text"
+                maxLength={3}
+                value={card.cvv}
+                onChange={(e) => {
+                  setCard({ ...card, cvv: e.target.value.replace(/\D/g, "") });
+                  setCardErrors({ ...cardErrors, cvv: "" });
+                }}
+              />
+              {cardErrors.cvv && (
+                <span className={styles.error}>{cardErrors.cvv}</span>
+              )}
+            </div>
+            <div className={styles.formGroup}>
+              <label htmlFor="month">Expiry Month</label>
+              <select
+                id="month"
+                value={card.month}
+                onChange={(e) => {
+                  setCard({ ...card, month: e.target.value });
+                  setCardErrors({ ...cardErrors, month: "" });
+                }}
+              >
+                <option value="">Month</option>
+                {Array.from({ length: 12 }, (_, i) =>
+                  String(i + 1).padStart(2, "0"),
+                ).map((m) => (
+                  <option key={m} value={m}>
+                    {m}
+                  </option>
+                ))}
+              </select>
+              {cardErrors.month && (
+                <span className={styles.error}>{cardErrors.month}</span>
+              )}
+            </div>
+            <div className={styles.formGroup}>
+              <label htmlFor="year">Expiry Year</label>
+              <select
+                id="year"
+                value={card.year}
+                onChange={(e) => {
+                  setCard({ ...card, year: e.target.value });
+                  setCardErrors({ ...cardErrors, year: "" });
+                }}
+              >
+                <option value="">Year</option>
+                {Array.from({ length: 10 }, (_, i) =>
+                  String(new Date().getFullYear() + i),
+                ).map((y) => (
+                  <option key={y} value={y}>
+                    {y}
+                  </option>
+                ))}
+              </select>
+              {cardErrors.year && (
+                <span className={styles.error}>{cardErrors.year}</span>
+              )}
+            </div>
+            {submitError && <span className={styles.error}>{submitError}</span>}
+            <div className={styles.checkBox}>
+              <label htmlFor="rememberCard">Remember my card</label>
+              <input
+                id="rememberCard"
+                type="checkbox"
+                checked={rememberCard}
+                onChange={(e) => setRememberCard(e.target.checked)}
+              />
             </div>
           </div>
         );
-      default:
-        return <div>{stepIndex}</div>;
     }
   }
+
   return (
     <>
       <div className={styles.popUpTitle}>

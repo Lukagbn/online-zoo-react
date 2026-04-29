@@ -46,6 +46,9 @@ function page() {
       );
       const result: PetProps = await res.json();
       setPetData(result);
+      if (!res.ok) {
+        console.log("error");
+      }
     } catch (err) {
       console.log("err:", err);
     }
