@@ -18,8 +18,6 @@ function Navbar() {
     lastName: string;
     email: string;
   } | null>(null);
-  const [hoverLogIn, setHoverLogIn] = useState(false);
-  const [hoverSignUp, sethoverSignUp] = useState(false);
 
   const NAVBAR_LIST = [
     { title: "about", url: "/" },
@@ -137,21 +135,11 @@ function Navbar() {
               <div className={styles.loggedOutUser}>
                 <h3>Login Or Register</h3>
                 <div className={styles.authLinks}>
-                  <Link
-                    href="/login"
-                    onMouseEnter={() => setHoverLogIn(true)}
-                    onMouseLeave={() => setHoverLogIn(false)}
-                  >
+                  <Link href="/login" onClick={() => setpopUp(!popUp)}>
                     Log in
-                    <RightArrow color={hoverLogIn ? "white" : "#20113d"} />
                   </Link>
-                  <Link
-                    href="/register"
-                    onMouseEnter={() => sethoverSignUp(true)}
-                    onMouseLeave={() => sethoverSignUp(false)}
-                  >
+                  <Link href="/register" onClick={() => setpopUp(!popUp)}>
                     Sign up
-                    <RightArrow color={hoverSignUp ? "white" : "#20113d"} />
                   </Link>
                 </div>
               </div>
