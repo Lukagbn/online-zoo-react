@@ -64,7 +64,7 @@ function Care() {
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
         >
-          <Link href={"/feed"}>Feed Your Favourite</Link>
+          <Link href={"/"}>Feed Your Favourite</Link>
           <RightArrow color={hover ? "white" : "#20113d"} />
         </button>
       </div>

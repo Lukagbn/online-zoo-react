@@ -12,7 +12,7 @@ interface PetsApiResponse {
   data: PetsProps[];
 }
 interface PetsProps {
-  id: number;
+  _id: string;
   name: string;
   commonName: string;
   description: string;
@@ -28,12 +28,13 @@ function PetSection() {
   async function fetchPets() {
     try {
       const res = await fetch(
-        "https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/pets",
+        "https://online-zoo-backend.onrender.com/animals",
       );
       const result: PetsApiResponse = await res.json();
       if (!res.ok) {
         setError(true);
         console.log("Something went wrong. Please, refresh the page");
+        return;
       }
       setPets(result.data);
     } catch (err) {
@@ -103,10 +104,10 @@ function PetSection() {
         </div>
       </div>
       <div className={styles.petsCardContainer} ref={containerRef}>
-        {pets?.map((pet) => (
+        {pets.map((pet) => (
           <PetCard
-            key={pet.id}
-            id={pet.id}
+            key={pet._id}
+            _id={pet._id}
             name={pet.name}
             commonName={pet.commonName}
             description={pet.description}

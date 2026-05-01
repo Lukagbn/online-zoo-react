@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import styles from "./Aside.module.scss";
 import AsideBox from "./AsideBox/AsideBox";
@@ -7,7 +8,7 @@ interface AsideApiResponse {
   data: AsideBox[];
 }
 interface AsideBox {
-  id: number;
+  animalId: string;
   text: string;
 }
 
@@ -16,10 +17,19 @@ function Aside({ id }: { id: string }) {
   const [error, setError] = useState(false);
   const [expand, setExpand] = useState(false);
   const [expandAside, setExpandAside] = useState(false);
+  const [atTop, setAtTop] = useState(false);
+  const asideClasses = [
+    styles.aside,
+    expandAside ? styles.expandAside : "",
+    expand ? styles.asideActive : "",
+    atTop ? styles.atTop : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
   async function fetchCams() {
     try {
       const res = await fetch(
-        "https://vsqsnqnxkh.execute-api.eu-central-1.amazonaws.com/prod/cameras",
+        "https://online-zoo-backend.onrender.com/animals/cameras",
       );
       if (!res.ok) {
         setError(true);
@@ -35,16 +45,32 @@ function Aside({ id }: { id: string }) {
   useEffect(() => {
     fetchCams();
   }, [id]);
-  if (error) return <FetchError />;
-  if (!cameras) return;
-  return (
-    <aside
-      className={
-        expandAside
-          ? `${styles.aside} ${styles.expandAside} ${expand ? styles.asideActive : ""}`
-          : `${styles.aside} ${expand ? styles.asideActive : ""}`
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 110) {
+        setAtTop(true);
+      } else {
+        setAtTop(false);
       }
-    >
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  if (error) return <FetchError />;
+  if (!cameras)
+    return (
+      <aside
+        className={
+          atTop ? `${styles.asideLoader} ${styles.atTop}` : styles.asideLoader
+        }
+      >
+        {Array.from({ length: 5 }, (_, i) => (
+          <div key={i} className={styles.asideBoxLoader}></div>
+        ))}
+      </aside>
+    );
+  return (
+    <aside className={asideClasses}>
       <div className={styles.cameraWrapper}>
         <span>
           live <img src="/icons/camera.svg" alt="live" />
@@ -60,8 +86,8 @@ function Aside({ id }: { id: string }) {
         {cameras.map((aside) => (
           <AsideBox
             expand={expand}
-            key={aside.id}
-            id={aside.id.toString()}
+            key={aside.animalId}
+            id={aside.animalId}
             title={aside.text}
           />
         ))}

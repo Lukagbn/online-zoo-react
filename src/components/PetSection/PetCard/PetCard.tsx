@@ -5,24 +5,23 @@ import RightArrow from "../../ArrowButtons/RightArrow/RightArrow";
 import { ANIMAL_BIO_IMAGES } from "@/utils/animalImages";
 
 interface PetCardProps {
-  id: number;
+  _id: string;
   name: string;
   commonName: string;
   description: string;
 }
 
-function PetCard({ id, name, commonName, description }: PetCardProps) {
-  const petImage = ANIMAL_BIO_IMAGES.find((img) => img.id === id);
+function PetCard({ _id, name, commonName, description }: PetCardProps) {
+  const petImage = ANIMAL_BIO_IMAGES.find((img) => img.id === _id);
   return (
     <div className={styles.petCard}>
-      <Link href={`/zoos/${id}`}></Link>
+      <Link href={`/zoos/${_id}`}></Link>
       <div className={styles.cardHeader}>
         {petImage ? (
           <img src={petImage.url} alt={petImage.alt} />
         ) : (
           <img src="/images/eagles.png" />
         )}
-
         <p>{name}</p>
       </div>
       <div className={styles.cardBody}>

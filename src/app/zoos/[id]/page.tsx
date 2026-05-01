@@ -13,14 +13,53 @@ import styles from "./page.module.scss";
 import CameraCarousel from "@/components/Camera/CameraCarousel/CameraCarousel";
 import Aside from "@/components/Aside/Aside";
 
+interface PetId {
+  commonName: string;
+  description: string;
+  name: string;
+  _id: string;
+}
+
+export interface PetProps {
+  animalId: PetId;
+  commonName: string;
+  description: string;
+  detailedDescription: string;
+  diet: string;
+  habitat: string;
+  id: string;
+  latitude: string;
+  longitude: string;
+  range: string;
+  scientificName: string;
+  size: string;
+  video: string;
+}
+
 function page() {
   const { id } = useParams();
-  const [hasError, setHasError] = useState(false);
-  if (hasError) return <FetchError className={styles.zoosError} />;
+  const [petData, setPetData] = useState<PetProps | null>(null);
+  async function fetchPet() {
+    try {
+      const res = await fetch(
+        `https://online-zoo-backend.onrender.com/animals/details/${id}`,
+      );
+      const result: PetProps = await res.json();
+      setPetData(result);
+      if (!res.ok) {
+        console.log("error");
+      }
+    } catch (err) {
+      console.log("err:", err);
+    }
+  }
+  useEffect(() => {
+    fetchPet();
+  }, [id]);
   return (
     <>
       <Aside id={id as string} />
-      <Camera id={id as string} />
+      <Camera petData={petData || null} />
       <section className={styles.contentWrapper}>
         <CameraCarousel />
         <DonationBanner
@@ -28,9 +67,9 @@ function page() {
           title="Your donation makes a difference!"
           paragraph="The Online Zoo's animal webcams are some of the most famous on the internet. Tune in to watch your favourite animals — live, 24/7!"
         />
-        <DidYouKnow id={id as string} />
-        <AnimalBio id={id as string} />
-        <AnimalBioDescription id={id as string} />
+        <DidYouKnow petData={petData || null} />
+        <AnimalBio petData={petData || null} />
+        <AnimalBioDescription petData={petData || null} />
       </section>
     </>
   );

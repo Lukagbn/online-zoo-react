@@ -14,7 +14,7 @@ function AsideBox({
   expand: boolean;
 }) {
   const pathname = usePathname();
-  const icon = ASIDE_ICONS.find((icon) => icon.id.toString() == id);
+  const icon = ASIDE_ICONS.find((icon) => icon.id === id);
   const isActive = pathname == `/zoos/${id}`;
   return (
     <div

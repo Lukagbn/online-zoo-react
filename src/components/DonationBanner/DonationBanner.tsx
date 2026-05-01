@@ -13,6 +13,15 @@ interface DonationProps {
 
 function DonationBanner({ title, paragraph, className }: DonationProps) {
   const [pressed, setPressed] = useState(false);
+  useEffect(() => {
+    if (pressed) {
+      document.documentElement.classList.add("noScroll");
+      document.body.classList.add("noScroll");
+    } else {
+      document.documentElement.classList.remove("noScroll");
+      document.body.classList.remove("noScroll");
+    }
+  }, [pressed]);
   return (
     <section className={`${styles.donations} ${className || ""}`}>
       <div className={`${styles.donationContainer} ${layout.container}`}>
@@ -23,7 +32,7 @@ function DonationBanner({ title, paragraph, className }: DonationProps) {
           </div>
           <div className={styles.donationAction}>
             <h3>Quick Donate</h3>
-            <button type="button" onClick={() => setPressed(!pressed)}>
+            <button type="button" onClick={() => setPressed(true)}>
               $ donation amount
               <div className={styles.arrowBtnBackground}>
                 <RightArrow color="white" />
