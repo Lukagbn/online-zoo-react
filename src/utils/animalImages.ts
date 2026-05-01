@@ -15,6 +15,7 @@ export interface AnimalBioProps {
   scientificName: string;
   size: string;
   type: string;
+  image?: string;
 }
 
 export const ANIMAL_BIO_IMAGES: AnimalBioImages[] = [
