@@ -18,6 +18,7 @@ function AnimalBio({ petData }: { petData: PetProps | null }) {
         scientificName={petData.scientificName}
         type={""}
         size={petData.size}
+        image={petData.image}
         diet={petData.diet}
         habitat={petData.habitat}
         range={petData.range}

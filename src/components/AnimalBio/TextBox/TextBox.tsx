@@ -16,6 +16,7 @@ function TextBox({
   id,
   latitude,
   longitude,
+  image,
 }: AnimalBioProps) {
   const fields = [
     { title: "Common name:", value: commonName },
@@ -44,7 +45,7 @@ function TextBox({
       {animalBioImg ? (
         <img
           className={styles.img}
-          src={animalBioImg.url}
+          src={image ?? animalBioImg.url}
           alt={animalBioImg.alt}
         />
       ) : (

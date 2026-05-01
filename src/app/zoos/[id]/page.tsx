@@ -33,6 +33,7 @@ export interface PetProps {
   range: string;
   scientificName: string;
   size: string;
+  image: string;
   video: string;
 }
 
