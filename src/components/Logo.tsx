@@ -1,5 +1,3 @@
-import React from "react";
-
 function Logo({ color }: { color: string }) {
   return (
     <svg

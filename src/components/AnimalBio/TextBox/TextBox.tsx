@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./TextBox.module.scss";
 import RightArrow from "@/components/ArrowButtons/RightArrow/RightArrow";
 import { AnimalBioProps } from "@/utils/animalImages";
 import { ANIMAL_BIO_IMAGES } from "@/utils/animalImages";
-import AnimalBio from "../AnimalBio";
 
 function TextBox({
   commonName,

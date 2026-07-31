@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Aside.module.scss";
 import AsideBox from "./AsideBox/AsideBox";
 import FetchError from "../FetchError/FetchError";

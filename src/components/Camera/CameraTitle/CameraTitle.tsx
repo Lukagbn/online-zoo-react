@@ -1,9 +1,6 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import styles from "./CameraTitle.module.scss";
-import Loader from "@/components/Loader/Loader";
 import RightArrow from "@/components/ArrowButtons/RightArrow/RightArrow";
-import FetchError from "@/components/FetchError/FetchError";
 import { PetProps } from "@/app/zoos/[id]/page";
 
 function CameraTitle({ petData }: { petData: PetProps | null }) {

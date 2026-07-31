@@ -1,5 +1,4 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import FetchError from "../FetchError/FetchError";
 import Loader from "../Loader/Loader";
 import TextBox from "./TextBox/TextBox";

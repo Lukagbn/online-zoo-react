@@ -1,7 +1,5 @@
-import React from "react";
 import styles from "./PayAndFeed.module.scss";
 import RightArrow from "../ArrowButtons/RightArrow/RightArrow";
-import layout from "@/app/layout.module.scss";
 import PayAndFeedHr from "./PayAndFeedHr/PayAndFeedHr";
 
 interface PayAndFeedProps {

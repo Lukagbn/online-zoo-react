@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./FetchError.module.scss";
 
 interface FetchClassProp {

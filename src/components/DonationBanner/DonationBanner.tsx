@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./DonationBanner.module.scss";
 import layout from "@/app/layout.module.scss";
 import RightArrow from "../ArrowButtons/RightArrow/RightArrow";

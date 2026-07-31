@@ -1,4 +1,3 @@
-import React from "react";
 import EagleMarker from "./EagleMarker/EagleMarker";
 import AligatorMarker from "./AligatorMarker/AligatorMarker";
 import LionMarker from "./LionMarker/LionMarker";

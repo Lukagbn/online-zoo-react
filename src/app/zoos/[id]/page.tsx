@@ -2,13 +2,10 @@
 import AnimalBio from "@/components/AnimalBio/AnimalBio";
 import AnimalBioDescription from "@/components/AnimalBio/AnimalBioDescription/AnimalBioDescription";
 import Camera from "@/components/Camera/Camera";
-import CameraTitle from "@/components/Camera/CameraTitle/CameraTitle";
 import DidYouKnow from "@/components/AnimalBio/DidYouKnow/DidYouKnow";
 import DonationBanner from "@/components/DonationBanner/DonationBanner";
-import FetchError from "@/components/FetchError/FetchError";
-import Loader from "@/components/Loader/Loader";
 import { useParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./page.module.scss";
 import CameraCarousel from "@/components/Camera/CameraCarousel/CameraCarousel";
 import Aside from "@/components/Aside/Aside";

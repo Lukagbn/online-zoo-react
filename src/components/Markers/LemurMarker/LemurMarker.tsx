@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import styles from "./LemurMarker.module.scss";
 import { useState } from "react";
 

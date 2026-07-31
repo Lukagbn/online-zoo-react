@@ -1,9 +1,8 @@
 import styles from "./Footer.module.scss";
 import layout from "@/app/layout.module.scss";
 import Link from "next/link";
-import RightArrow from "../ArrowButtons/RightArrow/RightArrow";
 import Donation from "../Donation/Donation";
-import Logo from "../Logo/Logo";
+import Logo from "../Logo";
 import Socials from "../Socials/Socials";
 
 function Footer() {

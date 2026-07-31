@@ -1,13 +1,5 @@
 "use client";
-import Image from "next/image";
-import styles from "./page.module.scss";
-import layout from "./layout.module.scss";
-import Link from "next/link";
-import RightArrow from "@/components/ArrowButtons/RightArrow/RightArrow";
 import DonationBanner from "@/components/DonationBanner/DonationBanner";
-import PetCard from "@/components/PetSection/PetCard/PetCard";
-import { useEffect, useRef, useState } from "react";
-import LeftArrow from "@/components/ArrowButtons/LeftArrow/LeftArrow";
 import PayAndFeed from "@/components/PayAndFeed/PayAndFeed";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import Care from "@/components/Care/Care";

@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import styles from "./AnimalBioDescription.module.scss";
 import FetchError from "@/components/FetchError/FetchError";
 import Loader from "@/components/Loader/Loader";

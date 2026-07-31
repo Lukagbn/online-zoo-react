@@ -1,5 +1,4 @@
 import RightArrow from "@/components/ArrowButtons/RightArrow/RightArrow";
-import React from "react";
 import styles from "./page.module.scss";
 
 function page() {

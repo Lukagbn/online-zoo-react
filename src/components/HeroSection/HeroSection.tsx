@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./HeroSection.module.scss";
 import Link from "next/link";
 import RightArrow from "../ArrowButtons/RightArrow/RightArrow";

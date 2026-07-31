@@ -1,5 +1,4 @@
 import Markers from "@/components/Markers/Markers";
-import React from "react";
 import styles from "./page.module.scss";
 
 function page() {

@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./TestimonialsCard.module.scss";
 
 export interface TestimonialsProps {

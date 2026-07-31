@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./LeftArrow.module.scss";
 
 interface ArrowIconProps {

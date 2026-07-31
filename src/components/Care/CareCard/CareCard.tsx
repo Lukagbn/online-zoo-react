@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import RightArrow from "@/components/ArrowButtons/RightArrow/RightArrow";
 import styles from "./CareCard.module.scss";
 import Link from "next/link";
@@ -14,7 +13,7 @@ export interface CareCardProps {
 function CareCard({ img, paragraph, alt, title, url }: CareCardProps) {
   return (
     <div className={styles.careCard}>
-      <Link href={url ?? ""}></Link>
+      <Link href={url ?? "#"}></Link>
       <div className={styles.cardHeader}>
         <img src={img} alt={alt} />
       </div>

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./MakeYourDonation.module.scss";
 import DonationContent from "./DonationContent/DonationContent";
 import { getUserFromToken } from "@/utils/auth";

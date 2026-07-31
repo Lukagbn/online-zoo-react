@@ -1,12 +1,11 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Navbar.module.scss";
 import layout from "@/app/layout.module.scss";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import RightArrow from "../ArrowButtons/RightArrow/RightArrow";
 import { getUserFromToken } from "@/utils/auth";
-import Logo from "../Logo/Logo";
+import Logo from "../Logo";
 import Socials from "../Socials/Socials";
 
 function Navbar() {

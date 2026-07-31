@@ -1,12 +1,11 @@
 "use client";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import styles from "./page.module.scss";
-import { getUserFromToken } from "@/utils/auth";
 
 const schema = yup.object({
   email: yup

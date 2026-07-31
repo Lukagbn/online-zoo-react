@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import RightArrow from "../ArrowButtons/RightArrow/RightArrow";
 import CareCard from "./CareCard/CareCard";
 import styles from "./Care.module.scss";

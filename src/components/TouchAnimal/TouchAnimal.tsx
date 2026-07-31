@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./TouchAnimal.module.scss";
 
 function TouchAnimal() {

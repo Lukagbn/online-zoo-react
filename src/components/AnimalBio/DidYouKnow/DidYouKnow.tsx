@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import styles from "./DidYouKnow.module.scss";
 import Loader from "@/components/Loader/Loader";
 import FetchError from "@/components/FetchError/FetchError";

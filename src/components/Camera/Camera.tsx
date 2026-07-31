@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Camera.module.scss";
 import CameraTitle from "./CameraTitle/CameraTitle";
 import { PetProps } from "@/app/zoos/[id]/page";

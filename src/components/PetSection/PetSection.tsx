@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./PetSection.module.scss";
 import layout from "@/app/layout.module.scss";
 import LeftArrow from "../ArrowButtons/LeftArrow/LeftArrow";
