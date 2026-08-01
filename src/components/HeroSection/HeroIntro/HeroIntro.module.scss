@@ -1,13 +1,11 @@
 .heroIntro {
   margin-top: 50px;
-  img {
-    display: block;
-    max-width: 100%;
-  }
   .container {
     max-width: 1000px;
   }
-
+  img {
+    height: auto;
+  }
   .heroIntroTextContent {
     margin-top: 30px;
     margin-inline: 10px;
@@ -56,12 +54,6 @@
         font-size: 54px;
         line-height: 65.5px;
       }
-    }
-    img {
-      max-width: 660px;
-      width: 100%;
-      display: block;
-      margin: auto;
     }
   }
 }

@@ -18,7 +18,11 @@ function TestimonialsCard({
   return (
     <div className={styles.testimonialCard}>
       <div className={styles.cardHead}>
-        <img src="/images/backticks.webp" alt="backticks" />
+        <img
+          src="/images/backticks.webp"
+          alt="backticks"
+          style={{ width: "59px", height: "45px" }}
+        />
         <h3>
           {city}, {month} {year}
         </h3>

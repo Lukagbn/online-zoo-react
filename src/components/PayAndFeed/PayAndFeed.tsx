@@ -1,12 +1,15 @@
 import styles from "./PayAndFeed.module.scss";
 import RightArrow from "../ArrowButtons/RightArrow/RightArrow";
 import PayAndFeedHr from "./PayAndFeedHr/PayAndFeedHr";
+import Image from "next/image";
 
 interface PayAndFeedProps {
   heroImg: string;
   heroImgAlt: string;
   heroIcon: string;
   heroIconAlt: string;
+  heroIconWidth: number;
+  heroIconHeight: number;
   title: string;
   paragraph: string;
   button?: boolean;
@@ -20,6 +23,8 @@ function PayAndFeed() {
       heroIcon: "/icons/heart.svg",
       heroIconAlt: "heart",
       title: "Your donation has an impact",
+      heroIconWidth: 106,
+      heroIconHeight: 80,
       paragraph: ` Providing our animals with high-quality nutritious diets is just
                 one element of animal care at our Zoo. We do all the best so
                 that our animals can eat food similar to what they might find in
@@ -36,6 +41,8 @@ function PayAndFeed() {
       heroIcon: "/icons/donation.svg",
       heroIconAlt: "donation",
       title: "Make a donation",
+      heroIconWidth: 100,
+      heroIconHeight: 80,
       paragraph: `      You can donate through your credit card without any fees. It is
                 easy and safe. We do not keep donors' personal information on an
                 online network. Choose an amount to give and the pet's name if
@@ -47,6 +54,8 @@ function PayAndFeed() {
       heroImgAlt: "eating monkey",
       heroIcon: "/icons/food.svg",
       heroIconAlt: "food",
+      heroIconWidth: 80,
+      heroIconHeight: 80,
       title: "Bring your food charity — straight to your favorites pets.",
       paragraph: `      After your donation, the animal receives its favorite foods. You
                 can support your favorite animals or any animal you care about
@@ -65,16 +74,21 @@ function PayAndFeed() {
             <div
               className={`${styles.feedCard} ${index === PAYANDFEED.length - 1 ? styles.feedCardLast : ""}`}
             >
-              <img
+              <Image
                 className={styles.animal}
                 src={item.heroImg}
                 alt={item.heroImgAlt}
+                width={640}
+                height={416}
+                sizes="(min-width: 1200px) 550px, (min-width: 640px) 640px, 100vw"
               />
               <div className={styles.feedCardBody}>
-                <img
-                  className={`${styles.logo} ${styles[item.heroIconAlt] ?? ""}`}
+                <Image
+                  className={`${styles.logo}`}
                   src={item.heroIcon}
                   alt={item.heroIconAlt}
+                  width={item.heroIconWidth}
+                  height={item.heroIconHeight}
                 />
                 <h3>{item.title}</h3>
                 <div className={styles.desktop}>

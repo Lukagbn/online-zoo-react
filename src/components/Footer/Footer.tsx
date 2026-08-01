@@ -4,6 +4,7 @@ import Link from "next/link";
 import Donation from "../Donation/Donation";
 import Logo from "../Logo";
 import Socials from "../Socials/Socials";
+import Image from "next/image";
 
 function Footer() {
   const FOOTER_LIST = [
@@ -13,28 +14,19 @@ function Footer() {
     { title: "contact us", href: "/contact" },
   ];
   const FOOTER_BRANDS = [
-    { href: "#", img: "/icons/yemdigital.svg", alt: "yem digital" },
+    {
+      href: "#",
+      img: "/icons/yemdigital.svg",
+      alt: "yem digital",
+      width: 50,
+      height: 50,
+    },
     {
       href: "https://rs.school/courses/short-track",
       img: "/icons/rsschoollogo.svg",
       alt: "rs school",
-    },
-  ];
-  const SOCIAL_LIST = [
-    {
-      img: "/icons/youtube.svg",
-      url: "https://www.youtube.com/",
-      alt: "Youtube",
-    },
-    {
-      img: "/icons/instagram.svg",
-      url: "https://www.instagram.com/",
-      alt: "Instagram",
-    },
-    {
-      img: "/icons/facebook.svg",
-      url: "https://www.facebook.com/",
-      alt: "Facebook",
+      width: 138,
+      height: 51,
     },
   ];
   return (
@@ -45,7 +37,12 @@ function Footer() {
             <Logo color="white" />
             {FOOTER_BRANDS.map((item) => (
               <Link href={item.href} target="_blank" key={item.alt}>
-                <img src={item.img} alt={item.alt} />
+                <Image
+                  src={item.img}
+                  alt={item.alt}
+                  width={item.width}
+                  height={item.height}
+                />
               </Link>
             ))}
           </div>

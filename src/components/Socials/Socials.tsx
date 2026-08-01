@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./Socials.module.scss";
+import Image from "next/image";
 
 const SOCIAL_LIST = [
   {
@@ -30,7 +31,7 @@ function Socials({ isNavbar }: IsNavbar) {
     >
       {SOCIAL_LIST.map((item) => (
         <Link href={item.url} key={item.alt}>
-          <img src={item.img} alt={item.alt} />
+          <Image src={item.img} alt={item.alt} width={40} height={40} />
         </Link>
       ))}
     </div>

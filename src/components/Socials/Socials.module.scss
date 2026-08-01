@@ -3,9 +3,6 @@
   align-items: center;
   justify-content: center;
   gap: 50px;
-  img {
-    width: 40px;
-  }
   a {
     transition: 0.4s ease-in-out;
     &:hover {
@@ -20,20 +17,12 @@
   .socialContainer {
     display: flex;
     gap: 30px;
-    img {
-      width: 40px;
-      height: 40px;
-    }
   }
 }
 @media (min-width: 1200px) {
   .navBar {
     display: flex;
     gap: 30px;
-    img {
-      width: 40px;
-      height: 40px;
-    }
     a {
       transition: 0.4s ease-in-out;
 

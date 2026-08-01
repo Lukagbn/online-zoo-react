@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./HeroIntro.module.scss";
 import layout from "@/app/layout.module.scss";
 
@@ -6,7 +7,13 @@ function HeroIntro() {
     <section className={styles.heroIntro}>
       <div className={layout.container}>
         <div className={styles.introWelcome}>
-          <img src="/images/online-zoo.webp" alt="online zoo" />
+          <Image
+            src="/images/online-zoo.webp"
+            alt="online zoo"
+            width={660}
+            height={440}
+            style={{ width: "100%", height: "auto" }}
+          />
           <div className={styles.heroIntroTextContent}>
             <h2>Welcome to the Online Zoo!</h2>
             <p>
@@ -21,7 +28,13 @@ function HeroIntro() {
           </div>
         </div>
         <div className={styles.introHow}>
-          <img src="/images/eagles.webp" alt="eagles" />
+          <Image
+            src="/images/eagles.webp"
+            alt="eagles"
+            width={660}
+            height={440}
+            style={{ width: "100%", height: "auto" }}
+          />
           <div className={styles.heroIntroTextContent}>
             <h2>How we work</h2>
             <p>

@@ -12,22 +12,12 @@
   .feedCard {
     .animal {
       display: block;
-      width: 100%;
       object-fit: cover;
     }
     .logo {
       display: block;
-      max-width: 106px;
       width: 100%;
-      height: 80px;
-    }
-    .donation {
-      width: 100px;
-      height: 80px;
-    }
-    .food {
-      width: 80px;
-      height: 80px;
+      height: auto;
     }
     .feedCardBody {
       margin-top: 30px;
@@ -123,11 +113,6 @@
         justify-content: center;
         gap: 20px;
         align-items: center;
-        .animal {
-          max-width: 550px;
-          margin: unset;
-          height: 358px;
-        }
         .feedCardBody {
           margin-inline: 0;
           margin-top: unset;
