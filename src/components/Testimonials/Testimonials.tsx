@@ -123,6 +123,7 @@ function Testimonials() {
           <button
             type="button"
             className={styles.testiArrowBtn}
+            aria-label="left arrow"
             onMouseEnter={() => setHoverLeft(true)}
             onMouseLeave={() => setHoverLeft(false)}
           >
@@ -133,6 +134,7 @@ function Testimonials() {
           </button>
           <button
             type="button"
+            aria-label="right arrow"
             className={styles.testiArrowBtn}
             onMouseEnter={() => setHoverRight(true)}
             onMouseLeave={() => setHoverRight(false)}

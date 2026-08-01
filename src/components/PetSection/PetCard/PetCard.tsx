@@ -14,7 +14,7 @@ function PetCard({ _id, name, commonName, description }: PetCardProps) {
   const petImage = ANIMAL_BIO_IMAGES.find((img) => img.id === _id);
   return (
     <div className={styles.petCard}>
-      <Link href={`/zoos/${_id}`}></Link>
+      <Link href={`/zoos/${_id}`} aria-label="pet card"></Link>
       <div className={styles.cardHeader}>
         {petImage ? (
           <img src={petImage.url} alt={petImage.alt} />

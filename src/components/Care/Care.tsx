@@ -11,21 +11,25 @@ function Care() {
       img: "/images/lucas.webp",
       paragraph: `Your $30 could give Lucas a slice of panda cake, made with our secret recipe.`,
       alt: "lucas",
+      url: "zoos/69daad067f3cf0b0069a12c4",
     },
     {
       img: "/images/andy.webp",
       paragraph: `With your support, we can give Andy his favorite fruits. Especially when it's not fruit season in its natural habitat.`,
       alt: "andy",
+      url: "zoos/69daae16a47c720deb2945fd",
     },
     {
       img: "/images/senja.webp",
       paragraph: `Your $150 will help to care for Senja, a Sumatran tiger, for three weeks.`,
       alt: "senja",
+      url: "zoos/69dab76739b05211383d3df3",
     },
     {
       img: "/images/samlora.webp",
       paragraph: `Sam & Lora have hatched and raised numerous young and will be happy with your help.`,
       alt: "sam & lora",
+      url: "zoos/69dab6da8f07a49f709e97bc",
     },
   ];
   const [hover, setHover] = useState(false);
@@ -50,6 +54,7 @@ function Care() {
               img={item.img}
               paragraph={item.paragraph}
               alt={item.alt}
+              url={item.url}
             />
           ))}
         </div>

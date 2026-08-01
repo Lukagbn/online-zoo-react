@@ -81,6 +81,7 @@ function PetSection() {
           <div className={styles.btnContainer}>
             <button
               type="button"
+              aria-label="left arrow"
               onMouseEnter={() => setHoverLeft(true)}
               onMouseLeave={() => setHoverLeft(false)}
             >
@@ -92,6 +93,7 @@ function PetSection() {
             <button
               type="button"
               className="right-arrow-btn"
+              aria-label="right arrow"
               onMouseEnter={() => setHoverRight(true)}
               onMouseLeave={() => setHoverRight(false)}
             >
@@ -115,15 +117,15 @@ function PetSection() {
         ))}
       </div>
       <div className={layout.container}>
-        <button
+        <Link
+          href="/feed"
           className={styles.chooseFav}
-          type="button"
           onMouseEnter={() => setHoverFav(true)}
           onMouseLeave={() => setHoverFav(false)}
         >
-          <Link href={`/feed`}>Feed your favourite</Link>
+          Feed your favourite
           <RightArrow color={hoverFav ? "white" : "#20113d"} />
-        </button>
+        </Link>
       </div>
     </section>
   );
