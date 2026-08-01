@@ -150,7 +150,7 @@ function Testimonials() {
       </div>
       <img
         className={styles.testimonialsImg}
-        src="/images/testimonialspanda.png"
+        src="/images/testimonialspanda.webp"
         alt="panda"
       />
     </section>

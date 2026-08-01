@@ -8,22 +8,22 @@ import Link from "next/link";
 function Care() {
   const CARE_CARDS: CareCardProps[] = [
     {
-      img: "/images/lucas.png",
+      img: "/images/lucas.webp",
       paragraph: `Your $30 could give Lucas a slice of panda cake, made with our secret recipe.`,
       alt: "lucas",
     },
     {
-      img: "/images/andy.png",
+      img: "/images/andy.webp",
       paragraph: `With your support, we can give Andy his favorite fruits. Especially when it's not fruit season in its natural habitat.`,
       alt: "andy",
     },
     {
-      img: "/images/senja.png",
+      img: "/images/senja.webp",
       paragraph: `Your $150 will help to care for Senja, a Sumatran tiger, for three weeks.`,
       alt: "senja",
     },
     {
-      img: "/images/samlora.png",
+      img: "/images/samlora.webp",
       paragraph: `Sam & Lora have hatched and raised numerous young and will be happy with your help.`,
       alt: "sam & lora",
     },
@@ -41,7 +41,7 @@ function Care() {
         <div className={styles.careCardsWrapper}>
           <img
             className={styles.koalaBanner}
-            src="/images/careKoala.png"
+            src="/images/careKoala.webp"
             alt="koala"
           />
           {CARE_CARDS.map((item, index) => (

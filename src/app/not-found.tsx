@@ -6,7 +6,7 @@ function NotFound() {
     <div className={styles.notFoundContainer}>
       <Image
         className={styles.notFoundImage}
-        src={"/images/pageNotFound.png"}
+        src={"/images/pageNotFound.webp"}
         width={500}
         height={500}
         alt="page not found"

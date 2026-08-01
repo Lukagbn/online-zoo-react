@@ -6,7 +6,7 @@ function HeroIntro() {
     <section className={styles.heroIntro}>
       <div className={layout.container}>
         <div className={styles.introWelcome}>
-          <img src="/images/online-zoo.png" alt="online zoo" />
+          <img src="/images/online-zoo.webp" alt="online zoo" />
           <div className={styles.heroIntroTextContent}>
             <h2>Welcome to the Online Zoo!</h2>
             <p>
@@ -21,7 +21,7 @@ function HeroIntro() {
           </div>
         </div>
         <div className={styles.introHow}>
-          <img src="/images/eagles.png" alt="eagles" />
+          <img src="/images/eagles.webp" alt="eagles" />
           <div className={styles.heroIntroTextContent}>
             <h2>How we work</h2>
             <p>

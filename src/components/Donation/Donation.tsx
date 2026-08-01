@@ -32,7 +32,7 @@ function Donation() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className={styles.imgContainer}>
-              <img src="/images/careandprotect.png" alt="care and protect" />
+              <img src="/images/careandprotect.webp" alt="care and protect" />
               <span
                 className={styles.cross}
                 onClick={() => setDonation(!donation)}

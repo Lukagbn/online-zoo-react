@@ -19,7 +19,7 @@ function PetCard({ _id, name, commonName, description }: PetCardProps) {
         {petImage ? (
           <img src={petImage.url} alt={petImage.alt} />
         ) : (
-          <img src="/images/eagles.png" />
+          <img src="/images/eagles.webp" />
         )}
         <p>{name}</p>
       </div>

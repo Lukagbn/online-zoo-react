@@ -15,9 +15,9 @@ interface PayAndFeedProps {
 function PayAndFeed() {
   const PAYANDFEED: PayAndFeedProps[] = [
     {
-      heroImg: "/images/monkey.png",
+      heroImg: "/images/monkey.webp",
       heroImgAlt: "mokey",
-      heroIcon: "/icons/heart.png",
+      heroIcon: "/icons/heart.svg",
       heroIconAlt: "heart",
       title: "Your donation has an impact",
       paragraph: ` Providing our animals with high-quality nutritious diets is just
@@ -31,9 +31,9 @@ function PayAndFeed() {
                 condition.`,
     },
     {
-      heroImg: "/images/banana.png",
+      heroImg: "/images/banana.webp",
       heroImgAlt: "banana",
-      heroIcon: "/icons/donation.png",
+      heroIcon: "/icons/donation.svg",
       heroIconAlt: "donation",
       title: "Make a donation",
       paragraph: `      You can donate through your credit card without any fees. It is
@@ -43,9 +43,9 @@ function PayAndFeed() {
                 regular donations.`,
     },
     {
-      heroImg: "/images/eatingmonkey.png",
+      heroImg: "/images/eatingmonkey.webp",
       heroImgAlt: "eating monkey",
-      heroIcon: "/icons/food.png",
+      heroIcon: "/icons/food.svg",
       heroIconAlt: "food",
       title: "Bring your food charity — straight to your favorites pets.",
       paragraph: `      After your donation, the animal receives its favorite foods. You
@@ -72,7 +72,7 @@ function PayAndFeed() {
               />
               <div className={styles.feedCardBody}>
                 <img
-                  className={`${styles.logo} ${styles.food}`}
+                  className={`${styles.logo} ${styles[item.heroIconAlt] ?? ""}`}
                   src={item.heroIcon}
                   alt={item.heroIconAlt}
                 />

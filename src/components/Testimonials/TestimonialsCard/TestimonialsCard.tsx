@@ -18,7 +18,7 @@ function TestimonialsCard({
   return (
     <div className={styles.testimonialCard}>
       <div className={styles.cardHead}>
-        <img src="/images/backticks.png" alt="backticks" />
+        <img src="/images/backticks.webp" alt="backticks" />
         <h3>
           {city}, {month} {year}
         </h3>

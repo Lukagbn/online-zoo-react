@@ -50,7 +50,7 @@ function Navbar() {
     <>
       <header className={styles.header}>
         <div className={`${styles.container} ${layout.container}`}>
-          <Link href={"#"} className={styles.logo}>
+          <Link href={"#"} className={styles.logo} aria-label="online zoo">
             <Logo color="black" />
           </Link>
           <div className={`${styles.userContainer} ${styles.mobile}`}>

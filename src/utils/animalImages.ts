@@ -21,42 +21,42 @@ export interface AnimalBioProps {
 export const ANIMAL_BIO_IMAGES: AnimalBioImages[] = [
   {
     id: "69daad067f3cf0b0069a12c4",
-    url: "/images/zoos/animals/panda.png",
+    url: "/images/zoos/animals/panda.webp",
     alt: "panda",
   },
   {
     id: "69daae16a47c720deb2945fd",
-    url: "/images/zoos/animals/lemur.png",
+    url: "/images/zoos/animals/lemur.webp",
     alt: "lemur",
   },
   {
     id: "69daae368492ab4f9a58c7d1",
-    url: "/images/zoos/animals/gorillacongo.png",
+    url: "/images/zoos/animals/gorillacongo.webp",
     alt: "gorilla in congo",
   },
   {
     id: "69dab6c58f07a49f709e97b9",
-    url: "/images/zoos/animals/alligator.png",
+    url: "/images/zoos/animals/alligator.webp",
     alt: "alligator",
   },
   {
     id: "69dab6da8f07a49f709e97bc",
-    url: "/images/zoos/animals/eagles.png",
+    url: "/images/zoos/animals/eagles.webp",
     alt: "eagles",
   },
   {
     id: "69dab6ea0de04eb70208e232",
-    url: "/images/zoos/animals/koala.png",
+    url: "/images/zoos/animals/koala.webp",
     alt: "koala",
   },
   {
     id: "69dab70b0de04eb70208e235",
-    url: "/images/zoos/animals/lion.png",
+    url: "/images/zoos/animals/lion.webp",
     alt: "lion",
   },
   {
     id: "69dab76739b05211383d3df3",
-    url: "/images/zoos/animals/tiger.png",
+    url: "/images/zoos/animals/tiger.webp",
     alt: "tiger",
   },
   {
@@ -66,7 +66,7 @@ export const ANIMAL_BIO_IMAGES: AnimalBioImages[] = [
   },
   {
     id: "69dab7813f29e7dc32b5a69c",
-    url: "/images/zoos/animals/gorilla.png",
+    url: "/images/zoos/animals/gorilla.webp",
     alt: "gorilla",
   },
   {
@@ -76,7 +76,7 @@ export const ANIMAL_BIO_IMAGES: AnimalBioImages[] = [
   },
   {
     id: "69dabcb74732b07cd6e51f26",
-    url: "/images/zoos/animals/seaotter.jpg",
+    url: "/images/zoos/animals/seaotter.webp",
     alt: "sea otter",
   },
   {

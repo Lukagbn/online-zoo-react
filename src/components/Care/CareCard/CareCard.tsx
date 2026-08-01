@@ -13,7 +13,7 @@ export interface CareCardProps {
 function CareCard({ img, paragraph, alt, title, url }: CareCardProps) {
   return (
     <div className={styles.careCard}>
-      <Link href={url ?? "#"}></Link>
+      <Link href={url ?? "#"} aria-label="feed animal"></Link>
       <div className={styles.cardHeader}>
         <img src={img} alt={alt} />
       </div>

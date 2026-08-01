@@ -4,7 +4,7 @@ import styles from "./page.module.scss";
 function page() {
   return (
     <div className={styles.getInTouch}>
-      <img src="/images/getintouch.png" alt="get in touch" />
+      <img src="/images/getintouch.webp" alt="get in touch" />
       <div className={styles.contentWrapper}>
         <div className={styles.textWrapper}>
           <h2>Get in touch</h2>
