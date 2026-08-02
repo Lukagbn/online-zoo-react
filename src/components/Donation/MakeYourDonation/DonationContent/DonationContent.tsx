@@ -141,11 +141,22 @@ function DonationContent({
                 onClick={() => setDropdown(!dropdown)}
               >
                 <div className={styles.selectedContainer}>
-                  <div className="selected" style={{ color: "black" }}>
+                  <div className={styles.selected}>
                     <p>{pet ?? "Choose your favorite"}</p>
                   </div>
-                  <span>
-                    <img src="/icons/arrowdown.svg" alt="drop down arrow" />
+                  <span className={styles.arrow}>
+                    <svg
+                      width="15"
+                      height="9"
+                      viewBox="0 0 15 9"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M1.34091 0L0 1.36504L7.5 9L15 1.36504L13.6591 0L7.5 6.26992L1.34091 0Z"
+                        fill="#000000"
+                      />
+                    </svg>
                   </span>
                 </div>
                 <ul className={styles.dropDownList}>
@@ -186,7 +197,7 @@ function DonationContent({
                   );
                 }}
               />
-              {nameError && <span className={styles.error}>{nameError}</span>}
+              <span className={styles.error}>{nameError}</span>
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="email">Your Email Address</label>
@@ -205,7 +216,7 @@ function DonationContent({
                   );
                 }}
               />
-              {emailError && <span className={styles.error}>{emailError}</span>}
+              <span className={styles.error}>{emailError}</span>
             </div>
             <p className={styles.receiveEmail}>
               You will receive emails from the Online Zoo, including updates and
@@ -257,6 +268,13 @@ function DonationContent({
               <select
                 id="month"
                 value={card.month}
+                style={{
+                  maxWidth: "100px",
+                  width: "100%",
+                  height: "40px",
+                  display: "flex",
+                  marginTop: "10px",
+                }}
                 onChange={(e) => {
                   setCard({ ...card, month: e.target.value });
                   setCardErrors({ ...cardErrors, month: "" });
@@ -280,6 +298,13 @@ function DonationContent({
               <select
                 id="year"
                 value={card.year}
+                style={{
+                  maxWidth: "100px",
+                  width: "100%",
+                  height: "40px",
+                  display: "flex",
+                  marginTop: "10px",
+                }}
                 onChange={(e) => {
                   setCard({ ...card, year: e.target.value });
                   setCardErrors({ ...cardErrors, year: "" });

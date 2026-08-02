@@ -67,6 +67,10 @@ $transition-default: all 0.4s ease-in-out;
   .formGroup {
     display: flex;
     justify-content: space-between;
+    select {
+      max-width: 300px;
+      width: 100%;
+    }
     input {
       @include btn-base;
       color: $color-text-dark;
@@ -77,6 +81,14 @@ $transition-default: all 0.4s ease-in-out;
       text-align: center;
       text-transform: uppercase;
     }
+    @media (min-width: 1200px) {
+      max-width: 400px;
+      width: 100%;
+    }
+  }
+  @media (min-width: 1200px) {
+    max-width: 400px;
+    margin-inline: auto;
   }
 }
 .dropDown {
@@ -111,12 +123,37 @@ $transition-default: all 0.4s ease-in-out;
       li {
         color: $color-text-dark;
         padding: 10px;
+        cursor: pointer;
 
         &:hover {
           background-color: $color-primary-light;
         }
       }
     }
+  }
+  .selectedContainer {
+    display: flex;
+    height: 100%;
+    cursor: pointer;
+    .selected {
+      margin-left: auto;
+      align-items: center;
+      justify-self: center;
+      display: flex;
+    }
+    .arrow {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      background-color: #80cfc8;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+  }
+  @media (min-width: 1200px) {
+    max-width: 400px;
   }
 }
 .step {
@@ -143,6 +180,12 @@ $transition-default: all 0.4s ease-in-out;
       padding: 10px;
       font-size: 18px;
       display: block;
+    }
+    .error {
+      color: red;
+      height: 30px;
+      display: block;
+      margin-top: 5px;
     }
   }
   .receiveEmail {

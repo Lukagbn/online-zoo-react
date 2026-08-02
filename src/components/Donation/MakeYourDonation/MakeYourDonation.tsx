@@ -159,7 +159,9 @@ function MakeYourDonation({
           )}
           <button
             className={styles.next}
-            onClick={handleNext}
+            onClick={() => {
+              activeIndex === 2 ? onClose() : handleNext();
+            }}
             disabled={isNextDisabled()}
           >
             {activeIndex === 2 ? "Complete" : "Next"}
