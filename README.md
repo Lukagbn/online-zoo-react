@@ -4,6 +4,8 @@ An interactive online zoo platform where visitors can watch their favorite anima
 
 Built with **React**, **Next.js**, **TypeScript**, and **SCSS**.
 
+🔗 **Live Demo:** [online-zoo-react.vercel.app](https://online-zoo-react.vercel.app/)
+
 ---
 
 ## ✨ Features
